@@ -1,694 +1,795 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>سارا شاه حسینی | Sara Beauty Lounge</title>
-
-    <meta name="description"
-          content="سالن زیبایی سارا شاه حسینی در تهران">
-
-    <style>
-
-        /* ================= RESET ================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Tahoma, Arial, sans-serif;
-            background: #f8f5f7;
-            color: #353136;
-            line-height: 1.9;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* ================= HEADER ================= */
-
-        header {
-            position: fixed;
-            top: 0;
-            right: 0;
-            left: 0;
-            z-index: 1000;
-            background: rgba(255,255,255,.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid #eee4e9;
-        }
-
-        .nav {
-            max-width: 1200px;
-            height: 78px;
-            margin: auto;
-            padding: 0 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .logo-icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: linear-gradient(135deg,#d8789d,#a84f74);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 21px;
-            box-shadow: 0 8px 20px rgba(180,80,120,.25);
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        nav a {
-            font-size: 13px;
-            color: #555;
-            transition: .25s;
-        }
-
-        nav a:hover {
-            color: #c45d85;
-        }
-
-        .nav-call {
-            background: #c45d85;
-            color: white !important;
-            padding: 9px 17px;
-            border-radius: 12px;
-        }
-
-        /* ================= HERO ================= */
-
-        .hero {
-            min-height: 100vh;
-            padding: 150px 20px 90px;
-            display: flex;
-            align-items: center;
-            background:
-                radial-gradient(
-                    circle at 85% 20%,
-                    rgba(215,120,155,.22),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 10% 80%,
-                    rgba(170,160,170,.18),
-                    transparent 30%
-                ),
-                #f8f5f7;
-        }
-
-        .hero-container {
-            width: 100%;
-            max-width: 1100px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .hero-label {
-            display: inline-block;
-            color: #c45d85;
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 18px;
-        }
-
-        .hero h1 {
-            font-size: clamp(42px,7vw,78px);
-            line-height: 1.25;
-            color: #302c30;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: #c45d85;
-        }
-
-        .hero p {
-            max-width: 680px;
-            margin: auto;
-            color: #746d73;
-            font-size: 16px;
-        }
-
-        .hero-buttons {
-            margin-top: 32px;
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 13px 25px;
-            border-radius: 14px;
-            font-size: 14px;
-            font-weight: bold;
-            transition: .25s;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg,#d36c93,#a84e74);
-            color: white;
-            box-shadow: 0 12px 25px rgba(185,80,120,.23);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-        }
-
-        .btn-light {
-            background: white;
-            border: 1px solid #eadde3;
-        }
-
-        .btn-light:hover {
-            transform: translateY(-3px);
-            border-color: #d995ae;
-        }
-
-        /* ================= GENERAL ================= */
-
-        section {
-            padding: 95px 20px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title span {
-            color: #c45d85;
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .section-title h2 {
-            font-size: 38px;
-            margin: 5px 0 10px;
-        }
-
-        .section-title p {
-            color: #777;
-            font-size: 14px;
-        }
-
-        /* ================= SERVICES ================= */
-
-        .services {
-            background: white;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 18px;
-        }
-
-        .service {
-            padding: 30px 20px;
-            text-align: center;
-            border-radius: 23px;
-            border: 1px solid #eee3e8;
-            background: white;
-            transition: .3s;
-        }
-
-        .service:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 40px rgba(90,50,70,.10);
-            border-color: #dfa0b8;
-        }
-
-        .service-icon {
-            width: 65px;
-            height: 65px;
-            margin: auto auto 15px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f9e8ef;
-            font-size: 28px;
-        }
-
-        .service h3 {
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
-
-        .service p {
-            color: #888;
-            font-size: 12px;
-        }
-
-        /* ================= ABOUT ================= */
-
-        .about {
-            background: #f8f5f7;
-        }
-
-        .about-box {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .about-box h2 {
-            font-size: 38px;
-            margin: 10px 0 20px;
-        }
-
-        .about-box p {
-            color: #777;
-            font-size: 15px;
-            margin-bottom: 15px;
-        }
-
-        .about-features {
-            margin-top: 30px;
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            gap: 12px;
-        }
-
-        .feature {
-            background: white;
-            border: 1px solid #eee3e8;
-            border-radius: 17px;
-            padding: 16px 8px;
-            font-size: 12px;
-        }
-
-        /* ================= RESERVATION ================= */
-
-        .reservation {
-            background: white;
-        }
-
-        .reservation-box {
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg,#39343a,#51434b);
-            border-radius: 30px;
-            padding: 55px;
-            color: white;
-            text-align: center;
-        }
-
-        .reservation-box::before {
-            content: "";
-            position: absolute;
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            background: rgba(220,120,155,.13);
-            left: -100px;
-            top: -110px;
-        }
-
-        .reservation-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .reservation-content span {
-            color: #efa5be;
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .reservation-content h2 {
-            font-size: 35px;
-            margin: 5px 0 10px;
-        }
-
-        .reservation-content p {
-            color: #d4cdd1;
-            font-size: 14px;
-        }
-
-        .phone {
-            display: inline-block;
-            direction: ltr;
-            color: #f1a9c1;
-            font-size: 27px;
-            font-weight: bold;
-            margin: 10px 0 20px;
-        }
-
-        /* ================= ADDRESS ================= */
-
-        .address {
-            background: #f3eef1;
-        }
-
-        .address-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .address-card {
-            background: white;
-            padding: 35px;
-            border-radius: 25px;
-            border: 1px solid #eee3e8;
-        }
-
-        .address-icon {
-            font-size: 32px;
-            margin-bottom: 8px;
-        }
-
-        .address-card h3 {
-            margin-bottom: 8px;
-        }
-
-        .address-card p {
-            color: #777;
-            font-size: 14px;
-        }
-
-        .map-button {
-            display: inline-block;
-            margin-top: 18px;
-            background: #f9e8ef;
-            color: #b05278;
-            padding: 9px 17px;
-            border-radius: 11px;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        /* ================= INSTAGRAM ================= */
-
-        .instagram {
-            background: white;
-            text-align: center;
-        }
-
-        .instagram-box {
-            max-width: 700px;
-            margin: auto;
-            padding: 50px 25px;
-            border-radius: 30px;
-            background: linear-gradient(135deg,#fff,#f9e9ef);
-            border: 1px solid #eddce4;
-        }
-
-        .instagram-icon {
-            font-size: 50px;
-            margin-bottom: 5px;
-        }
-
-        .instagram-box h2 {
-            font-size: 30px;
-        }
-
-        .instagram-name {
-            display: inline-block;
-            direction: ltr;
-            color: #c45d85;
-            font-weight: bold;
-            font-size: 20px;
-            margin: 8px 0 20px;
-        }
-
-        /* ================= QR ================= */
-
-        .qr {
-            background: #f3eef1;
-            text-align: center;
-        }
-
-        .qr-card {
-            max-width: 400px;
-            margin: auto;
-            background: white;
-            border-radius: 30px;
-            padding: 35px;
-            box-shadow: 0 15px 45px rgba(70,50,60,.08);
-        }
-
-        .qr-card h3 {
-            margin-bottom: 10px;
-        }
-
-        .qr-code {
-            width: 210px;
-            height: 210px;
-            margin: 20px auto;
-            display: block;
-        }
-
-        .qr-card p {
-            color: #777;
-            font-size: 13px;
-        }
-
-        /* ================= REVIEWS ================= */
-
-        .reviews {
-            background: white;
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 18px;
-        }
-
-        .review {
-            padding: 28px;
-            border-radius: 23px;
-            border: 1px solid #eee3e8;
-            background: white;
-        }
-
-        .stars {
-            color: #d26a91;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        .review p {
-            color: #777;
-            font-size: 13px;
-        }
-
-        .review strong {
-            display: block;
-            margin-top: 15px;
-            font-size: 13px;
-        }
-
-        /* ================= FOOTER ================= */
-
-        footer {
-            background: #302b30;
-            color: white;
-            padding: 55px 20px 25px;
-        }
-
-        .footer-grid {
-            max-width: 1100px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 35px;
-        }
-
-        footer h3 {
-            margin-bottom: 14px;
-        }
-
-        footer p,
-        footer a {
-            color: #bcb4b9;
-            font-size: 13px;
-        }
-
-        footer a {
-            display: block;
-            margin-bottom: 7px;
-        }
-
-        footer a:hover {
-            color: #efa5be;
-        }
-
-        .copyright {
-            max-width: 1100px;
-            margin: 35px auto 0;
-            padding-top: 20px;
-            border-top: 1px solid #484247;
-            text-align: center;
-            color: #969095;
-            font-size: 11px;
-        }
-
-        /* ================= MOBILE ================= */
-
-        @media (max-width: 850px) {
-
-            nav {
-                display: none;
-            }
-
-            .services-grid {
-                grid-template-columns: repeat(2,1fr);
-            }
-
-            .about-features {
-                grid-template-columns: repeat(2,1fr);
-            }
-
-            .reviews-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .address-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 550px) {
-
-            .hero {
-                padding-top: 125px;
-            }
-
-            .hero h1 {
-                font-size: 43px;
-            }
-
-            section {
-                padding: 75px 16px;
-            }
-
-            .section-title h2 {
-                font-size: 31px;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-features {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .reservation-box {
-                padding: 40px 20px;
-            }
-
-            .reservation-content h2 {
-                font-size: 28px;
-            }
-
-            .phone {
-                font-size: 21px;
-            }
-
-            .address-card {
-                padding: 28px 22px;
-            }
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>سالن زیبایی سارا شاه حسینی | Sara Beauty Lounge</title>
+
+<meta name="description"
+content="سالن زیبایی سارا شاه حسینی در تهران - ارائه خدمات تخصصی مو، ناخن، مژه، پوست و زیبایی">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    background:#f8f5f7;
+    color:#353136;
+    line-height:1.9;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* ================= WELCOME ================= */
+
+.welcome{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(
+        135deg,
+        #302b30,
+        #57404b
+    );
+    z-index:9999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:25px;
+    transition:.7s;
+}
+
+.welcome.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.welcome-box{
+    max-width:650px;
+    color:white;
+    animation:welcomeIn 1s ease;
+}
+
+@keyframes welcomeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.welcome-logo{
+    width:85px;
+    height:85px;
+    border-radius:50%;
+    margin:0 auto 20px;
+    background:linear-gradient(135deg,#e28bab,#ad5579);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+    font-weight:bold;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.welcome-small{
+    color:#efa5be;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.welcome h1{
+    font-size:clamp(30px,6vw,55px);
+    margin:8px 0 15px;
+}
+
+.welcome p{
+    color:#ddd4d8;
+    max-width:550px;
+    margin:auto;
+    font-size:14px;
+}
+
+.start-button{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 32px;
+    background:linear-gradient(135deg,#d9759c,#aa5076);
+    border-radius:15px;
+    color:white;
+    font-weight:bold;
+    box-shadow:0 12px 30px rgba(210,100,145,.25);
+    transition:.3s;
+    cursor:pointer;
+}
+
+.start-button:hover{
+    transform:translateY(-4px);
+}
+
+
+/* ================= DATE ================= */
+
+.date-box{
+    position:fixed;
+    top:90px;
+    left:18px;
+    z-index:900;
+    background:rgba(255,255,255,.93);
+    border:1px solid #eadde3;
+    border-radius:12px;
+    padding:7px 12px;
+    font-size:11px;
+    color:#a94f75;
+    box-shadow:0 8px 20px rgba(60,40,50,.08);
+}
+
+
+/* ================= HEADER ================= */
+
+header{
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    z-index:1000;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #eee4e9;
+}
+
+.nav{
+    max-width:1200px;
+    height:75px;
+    margin:auto;
+    padding:0 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:bold;
+    font-size:16px;
+}
+
+.logo-icon{
+    width:43px;
+    height:43px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#d8789d,#a84f74);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+}
+
+nav{
+    display:flex;
+    gap:22px;
+}
+
+nav a{
+    font-size:12px;
+    color:#555;
+    transition:.25s;
+}
+
+nav a:hover{
+    color:#c45d85;
+}
+
+.nav-call{
+    background:#c45d85;
+    color:white!important;
+    padding:8px 15px;
+    border-radius:11px;
+    font-size:12px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    padding:150px 20px 90px;
+    display:flex;
+    align-items:center;
+    background:
+    radial-gradient(
+        circle at 85% 20%,
+        rgba(215,120,155,.22),
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 10% 80%,
+        rgba(170,160,170,.18),
+        transparent 30%
+    ),
+    #f8f5f7;
+}
+
+.hero-container{
+    width:100%;
+    max-width:1000px;
+    margin:auto;
+    text-align:center;
+}
+
+.hero-label{
+    color:#c45d85;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.hero h1{
+    font-size:clamp(42px,7vw,75px);
+    line-height:1.3;
+    margin:15px 0;
+}
+
+.hero h1 span{
+    color:#c45d85;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:#746d73;
+    font-size:15px;
+}
+
+.hero-buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 23px;
+    border-radius:14px;
+    font-size:13px;
+    font-weight:bold;
+    transition:.25s;
+}
+
+.btn-primary{
+    background:linear-gradient(135deg,#d36c93,#a84e74);
+    color:white;
+    box-shadow:0 12px 25px rgba(185,80,120,.23);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-light{
+    background:white;
+    border:1px solid #eadde3;
+}
+
+.btn-light:hover{
+    transform:translateY(-3px);
+}
+
+
+/* ================= GENERAL ================= */
+
+section{
+    padding:90px 20px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title span{
+    color:#c45d85;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.section-title h2{
+    font-size:36px;
+    margin:5px 0 8px;
+}
+
+.section-title p{
+    color:#777;
+    font-size:13px;
+}
+
+
+/* ================= SERVICES ================= */
+
+.services{
+    background:white;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.service{
+    padding:28px 20px;
+    text-align:center;
+    border-radius:23px;
+    border:1px solid #eee3e8;
+    background:white;
+    transition:.3s;
+}
+
+.service:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px rgba(90,50,70,.10);
+    border-color:#dfa0b8;
+}
+
+.service-icon{
+    width:65px;
+    height:65px;
+    margin:auto auto 15px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f9e8ef;
+    font-size:28px;
+}
+
+.service h3{
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+.service p{
+    color:#777;
+    font-size:12px;
+    line-height:2;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about{
+    background:#f8f5f7;
+}
+
+.about-box{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
+
+.about-box h2{
+    font-size:36px;
+    margin:8px 0 20px;
+}
+
+.about-box p{
+    color:#777;
+    font-size:14px;
+    margin-bottom:13px;
+}
+
+.about-features{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.feature{
+    background:white;
+    border:1px solid #eee3e8;
+    border-radius:17px;
+    padding:16px 8px;
+    font-size:12px;
+}
+
+
+/* ================= RESERVATION ================= */
+
+.reservation{
+    background:white;
+}
+
+.reservation-box{
+    background:linear-gradient(135deg,#39343a,#51434b);
+    border-radius:30px;
+    padding:55px 25px;
+    color:white;
+    text-align:center;
+}
+
+.reservation-content span{
+    color:#efa5be;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.reservation-content h2{
+    font-size:35px;
+    margin:5px 0 10px;
+}
+
+.reservation-content p{
+    color:#d4cdd1;
+    font-size:13px;
+}
+
+.phone{
+    display:inline-block;
+    direction:ltr;
+    color:#f1a9c1;
+    font-size:27px;
+    font-weight:bold;
+    margin:10px 0 20px;
+}
+
+
+/* ================= ADDRESS ================= */
+
+.address{
+    background:#f3eef1;
+}
+
+.address-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.address-card{
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    border:1px solid #eee3e8;
+}
+
+.address-icon{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.address-card h3{
+    margin-bottom:8px;
+}
+
+.address-card p{
+    color:#777;
+    font-size:13px;
+}
+
+.map-button{
+    display:inline-block;
+    margin-top:18px;
+    background:#f9e8ef;
+    color:#b05278;
+    padding:9px 17px;
+    border-radius:11px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+
+/* ================= INSTAGRAM ================= */
+
+.instagram{
+    background:white;
+    text-align:center;
+}
+
+.instagram-box{
+    max-width:700px;
+    margin:auto;
+    padding:50px 25px;
+    border-radius:30px;
+    background:linear-gradient(135deg,#fff,#f9e9ef);
+    border:1px solid #eddce4;
+}
+
+.instagram-icon{
+    font-size:48px;
+}
+
+.instagram-box h2{
+    font-size:30px;
+}
+
+.instagram-name{
+    display:inline-block;
+    direction:ltr;
+    color:#c45d85;
+    font-weight:bold;
+    font-size:20px;
+    margin:8px 0 20px;
+}
+
+
+/* ================= QR ================= */
+
+.qr{
+    background:#f3eef1;
+    text-align:center;
+}
+
+.qr-card{
+    max-width:400px;
+    margin:auto;
+    background:white;
+    border-radius:30px;
+    padding:35px;
+    box-shadow:0 15px 45px rgba(70,50,60,.08);
+}
+
+.qr-code{
+    width:210px;
+    height:210px;
+    margin:20px auto;
+    display:block;
+}
+
+.qr-card p{
+    color:#777;
+    font-size:13px;
+}
+
+
+/* ================= REVIEWS ================= */
+
+.reviews{
+    background:white;
+}
+
+.reviews-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.review{
+    padding:28px;
+    border-radius:23px;
+    border:1px solid #eee3e8;
+}
+
+.stars{
+    color:#d26a91;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.review p{
+    color:#777;
+    font-size:13px;
+}
+
+.review strong{
+    display:block;
+    margin-top:15px;
+    font-size:12px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#302b30;
+    color:white;
+    padding:55px 20px 25px;
+}
+
+.footer-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:35px;
+}
+
+footer h3{
+    margin-bottom:14px;
+}
+
+footer p,
+footer a{
+    color:#bcb4b9;
+    font-size:12px;
+}
+
+footer a{
+    display:block;
+    margin-bottom:7px;
+}
+
+.copyright{
+    max-width:1100px;
+    margin:35px auto 0;
+    padding-top:20px;
+    border-top:1px solid #484247;
+    text-align:center;
+    color:#969095;
+    font-size:11px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:850px){
+
+    nav{
+        display:none;
+    }
+
+    .services-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-features{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .reviews-grid{
+        grid-template-columns:1fr;
+    }
+
+    .address-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .hero{
+        padding-top:130px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-features{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .date-box{
+        top:82px;
+        left:10px;
+        font-size:9px;
+    }
+
+}
+
+</style>
 </head>
 
+
 <body>
+
+
+<!-- ================= WELCOME ================= -->
+
+<div class="welcome" id="welcome">
+
+    <div class="welcome-box">
+
+        <div class="welcome-logo">
+            S
+        </div>
+
+        <div class="welcome-small">
+            ✦ SARA BEAUTY LOUNGE ✦
+        </div>
+
+        <h1>
+            به سایت سالن زیبایی
+            <br>
+            سارا شاه حسینی خوش آمدید
+        </h1>
+
+        <p>
+            زیبایی، ظرافت و حس خوب؛
+            اینجا جایی است که برای زیبایی و آرامش شما
+            اهمیت ویژه‌ای قائل هستیم.
+        </p>
+
+        <div class="start-button" onclick="startSite()">
+            شروع بازدید ✦
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= DATE ================= -->
+
+<div class="date-box" id="date">
+    📅 در حال نمایش تاریخ...
+</div>
 
 
 <!-- ================= HEADER ================= -->
 
 <header>
 
-    <div class="nav">
+<div class="nav">
 
-        <a href="#home" class="logo">
+<a href="#home" class="logo">
 
-            <div class="logo-icon">
-                S
-            </div>
+<div class="logo-icon">
+S
+</div>
 
-            <span>
-                سارا شاه حسینی
-            </span>
+<span>
+سارا شاه حسینی
+</span>
 
-        </a>
-
-
-        <nav>
-
-            <a href="#home">
-                صفحه اصلی
-            </a>
-
-            <a href="#services">
-                خدمات
-            </a>
-
-            <a href="#reservation">
-                رزرو
-            </a>
-
-            <a href="#address">
-                آدرس
-            </a>
-
-            <a href="#reviews">
-                نظرات
-            </a>
-
-            <a href="#instagram">
-                اینستاگرام
-            </a>
-
-        </nav>
+</a>
 
 
-        <a href="tel:09355097780" class="nav-call">
-            تماس
-        </a>
+<nav>
 
-    </div>
+<a href="#home">صفحه اصلی</a>
+
+<a href="#services">خدمات</a>
+
+<a href="#reservation">رزرو</a>
+
+<a href="#address">آدرس</a>
+
+<a href="#reviews">نظرات</a>
+
+<a href="#instagram">اینستاگرام</a>
+
+</nav>
+
+
+<a href="tel:09355097780" class="nav-call">
+تماس
+</a>
+
+</div>
 
 </header>
 
@@ -697,38 +798,49 @@
 
 <section class="hero" id="home">
 
-    <div class="hero-container">
+<div class="hero-container">
 
-        <span class="hero-label">
-            ✦ SARA BEAUTY LOUNGE ✦
-        </span>
+<span class="hero-label">
+✦ SARA BEAUTY LOUNGE ✦
+</span>
 
-        <h1>
-            زیبایی تو،
-            <br>
-            <span>سبک توست.</span>
-        </h1>
+<h1>
 
-        <p>
-            سالن زیبایی سارا شاه حسینی در تهران،
-            با ارائه مجموعه‌ای از خدمات زیبایی و مراقبتی
-            برای مو، ناخن، مژه، پوست و چهره.
-        </p>
+زیبایی تو،
+<br>
+
+<span>سبک توست.</span>
+
+</h1>
+
+<p>
+
+به سالن زیبایی سارا شاه حسینی خوش آمدید.
+در این مجموعه تلاش می‌کنیم با ارائه خدمات متنوع
+زیبایی و مراقبتی، تجربه‌ای آرام، حرفه‌ای و دلنشین
+برای شما ایجاد کنیم.
+
+از خدمات تخصصی مو و ناخن گرفته تا مژه،
+فیشیال، لیفت صورت، میکروبلیدینگ و شیدینگ لب؛
+هدف ما این است که با توجه به سلیقه و نیاز شما،
+بهترین تجربه را برایتان رقم بزنیم.
+
+</p>
 
 
-        <div class="hero-buttons">
+<div class="hero-buttons">
 
-            <a href="#services" class="btn btn-primary">
-                شروع بازدید ←
-            </a>
+<a href="#services" class="btn btn-primary">
+شروع بازدید ←
+</a>
 
-            <a href="tel:09355097780" class="btn btn-light">
-                📞 تماس برای رزرو
-            </a>
+<a href="tel:09355097780" class="btn btn-light">
+📞 تماس برای رزرو
+</a>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
@@ -737,184 +849,163 @@
 
 <section class="services" id="services">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title">
+<div class="section-title">
 
-            <span>
-                OUR SERVICES
-            </span>
+<span>
+OUR SERVICES
+</span>
 
-            <h2>
-                خدمات سالن
-            </h2>
+<h2>
+خدمات سالن
+</h2>
 
-            <p>
-                خدمات زیبایی با توجه به سلیقه و نیاز شما
-            </p>
+<p>
+مجموعه‌ای از خدمات زیبایی و مراقبتی
+برای داشتن ظاهری زیبا و حس بهتر
+</p>
 
-        </div>
+</div>
 
 
-        <div class="services-grid">
+<div class="services-grid">
 
 
-            <div class="service">
+<div class="service">
 
-                <div class="service-icon">
-                    💅
-                </div>
+<div class="service-icon">💅</div>
 
-                <h3>
-                    ناخن
-                </h3>
+<h3>ناخن</h3>
 
-                <p>
-                    خدمات زیبایی و مراقبت از ناخن
-                </p>
+<p>
+ارائه خدمات زیبایی ناخن با توجه به
+سلیقه شما و ایجاد ظاهری مرتب و زیبا
+برای دستان شما.
+</p>
 
-            </div>
+</div>
 
 
-            <div class="service">
+<div class="service">
 
-                <div class="service-icon">
-                    🎨
-                </div>
+<div class="service-icon">🎨</div>
 
-                <h3>
-                    رنگ و لایت
-                </h3>
+<h3>رنگ و لایت</h3>
 
-                <p>
-                    رنگ، لایت و تکنیک‌های زیبای مو
-                </p>
+<p>
+انواع خدمات رنگ و لایت مو برای ایجاد
+تغییری جذاب و متناسب با چهره و
+سلیقه شما.
+</p>
 
-            </div>
+</div>
 
 
-            <div class="service">
+<div class="service">
 
-                <div class="service-icon">
-                    ✨
-                </div>
+<div class="service-icon">✨</div>
 
-                <h3>
-                    کراتین و احیای مو
-                </h3>
+<h3>کراتین و احیای مو</h3>
 
-                <p>
-                    مراقبت و احیای مو
-                </p>
+<p>
+مراقبت، احیا و رسیدگی به مو برای
+داشتن موهایی سالم‌تر، مرتب‌تر و
+زیباتر.
+</p>
 
-            </div>
+</div>
 
 
-            <div class="service">
+<div class="service">
 
-                <div class="service-icon">
-                    👁️
-                </div>
+<div class="service-icon">👁️</div>
 
-                <h3>
-                    مژه
-                </h3>
+<h3>مژه</h3>
 
-                <p>
-                    خدمات زیبایی مژه
-                </p>
+<p>
+خدمات زیبایی مژه برای ایجاد ظاهری
+زیبا و جذاب و تکمیل آرایش چهره.
+</p>
 
-            </div>
+</div>
 
 
-            <div class="service">
+<div class="service">
 
-                <div class="service-icon">
-                    🧖🏻‍♀️
-                </div>
+<div class="service-icon">🧖🏻‍♀️</div>
 
-                <h3>
-                    فیشیال
-                </h3>
+<h3>فیشیال</h3>
 
-                <p>
-                    پاکسازی و مراقبت پوست
-                </p>
+<p>
+خدمات مراقبت و پاکسازی پوست برای
+کمک به داشتن پوستی تمیز، شاداب
+و باطراوت.
+</p>
 
-            </div>
+</div>
 
 
-            <div class="service">
+<div class="service">
 
-                <div class="service-icon">
-                    🌸
-                </div>
+<div class="service-icon">🌸</div>
 
-                <h3>
-                    لیفت صورت
-                </h3>
+<h3>لیفت صورت</h3>
 
-                <p>
-                    خدمات زیبایی و مراقبتی صورت
-                </p>
+<p>
+خدمات زیبایی صورت با تمرکز بر ایجاد
+ظاهری شاداب و مرتب برای چهره.
+</p>
 
-            </div>
+</div>
 
 
-            <div class="service">
+<div class="service">
 
-                <div class="service-icon">
-                    🖊️
-                </div>
+<div class="service-icon">🖊️</div>
 
-                <h3>
-                    میکروبلیدینگ
-                </h3>
+<h3>میکروبلیدینگ</h3>
 
-                <p>
-                    فرم‌دهی و زیبایی ابرو
-                </p>
+<p>
+فرم‌دهی ابرو و ایجاد ظاهری مرتب و
+متناسب با فرم چهره.
+</p>
 
-            </div>
+</div>
 
 
-            <div class="service">
+<div class="service">
 
-                <div class="service-icon">
-                    💋
-                </div>
+<div class="service-icon">💋</div>
 
-                <h3>
-                    شیدینگ لب
-                </h3>
+<h3>شیدینگ لب</h3>
 
-                <p>
-                    زیبایی و فرم‌دهی لب
-                </p>
+<p>
+خدمات زیبایی لب برای ایجاد ظاهری
+مرتب‌تر و جذاب‌تر متناسب با
+سلیقه شما.
+</p>
 
-            </div>
+</div>
 
 
-            <div class="service">
+<div class="service">
 
-                <div class="service-icon">
-                    🌷
-                </div>
+<div class="service-icon">🌷</div>
 
-                <h3>
-                    اصلاح و ابرو
-                </h3>
+<h3>اصلاح و ابرو</h3>
 
-                <p>
-                    اصلاح و فرم‌دهی ابرو
-                </p>
+<p>
+اصلاح و فرم‌دهی ابرو با توجه به
+فرم صورت و سلیقه شما.
+</p>
 
-            </div>
+</div>
 
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
@@ -923,54 +1014,54 @@
 
 <section class="about">
 
-    <div class="container">
+<div class="container">
 
-        <div class="about-box">
+<div class="about-box">
 
-            <span class="hero-label">
-                ABOUT US
-            </span>
+<span class="hero-label">
+ABOUT US
+</span>
 
-            <h2>
-                سالن زیبایی سارا شاه حسینی
-            </h2>
+<h2>
+سالن زیبایی سارا شاه حسینی
+</h2>
 
-            <p>
-                زیبایی فقط ظاهر نیست؛
-                حس خوب، اعتمادبه‌نفس و توجه به خود نیز بخشی
-                از زیبایی است.
-            </p>
+<p>
+سارا بیوتی لانژ با هدف ارائه خدمات متنوع
+زیبایی و مراقبتی در فضایی آرام و دلنشین
+فعالیت می‌کند.
+</p>
 
-            <p>
-                در Sara Beauty Lounge تلاش می‌کنیم
-                خدمات زیبایی را با دقت، ظرافت و توجه به
-                سلیقه شما ارائه کنیم.
-            </p>
+<p>
+ما باور داریم زیبایی هر فرد منحصر به خودش است؛
+به همین دلیل تلاش می‌کنیم خدمات را با توجه به
+سلیقه، نیاز و ویژگی‌های هر مراجعه‌کننده ارائه کنیم.
+</p>
 
 
-            <div class="about-features">
+<div class="about-features">
 
-                <div class="feature">
-                    ✦ خدمات متنوع
-                </div>
+<div class="feature">
+✦ خدمات متنوع
+</div>
 
-                <div class="feature">
-                    ✦ محیط آرام
-                </div>
+<div class="feature">
+✦ محیط آرام
+</div>
 
-                <div class="feature">
-                    ✦ توجه به سلیقه شما
-                </div>
+<div class="feature">
+✦ توجه به سلیقه شما
+</div>
 
-                <div class="feature">
-                    ✦ هماهنگی تلفنی
-                </div>
+<div class="feature">
+✦ هماهنگی تلفنی
+</div>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
@@ -979,41 +1070,40 @@
 
 <section class="reservation" id="reservation">
 
-    <div class="container">
+<div class="container">
 
-        <div class="reservation-box">
+<div class="reservation-box">
 
-            <div class="reservation-content">
+<div class="reservation-content">
 
-                <span>
-                    RESERVATION
-                </span>
+<span>
+RESERVATION
+</span>
 
-                <h2>
-                    برای رزرو نوبت
-                </h2>
+<h2>
+برای رزرو نوبت
+</h2>
 
-                <p>
-                    جهت رزرو نوبت و هماهنگی خدمات،
-                    با شماره زیر تماس بگیرید.
-                </p>
+<p>
+برای دریافت نوبت و هماهنگی زمان مراجعه،
+لطفاً با شماره زیر تماس بگیرید.
+</p>
 
-                <a href="tel:09355097780" class="phone">
-                    ۰۹۳۵۵۰۹۷۷۸۰
-                </a>
+<a href="tel:09355097780" class="phone">
+۰۹۳۵۵۰۹۷۷۸۰
+</a>
 
-                <br>
+<br>
 
-                <a href="tel:09355097780"
-                   class="btn btn-primary">
-                    📞 تماس برای رزرو
-                </a>
+<a href="tel:09355097780" class="btn btn-primary">
+📞 تماس برای رزرو
+</a>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
@@ -1022,92 +1112,93 @@
 
 <section class="address" id="address">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title">
+<div class="section-title">
 
-            <span>
-                CONTACT
-            </span>
+<span>
+CONTACT
+</span>
 
-            <h2>
-                آدرس و تماس
-            </h2>
+<h2>
+آدرس و تماس
+</h2>
 
-            <p>
-                برای مراجعه و رزرو با ما در ارتباط باشید.
-            </p>
+<p>
+برای مراجعه و رزرو با ما در ارتباط باشید.
+</p>
 
-        </div>
-
-
-        <div class="address-grid">
+</div>
 
 
-            <div class="address-card">
-
-                <div class="address-icon">
-                    📍
-                </div>
-
-                <h3>
-                    آدرس دقیق
-                </h3>
-
-                <p>
-                    تهران، میدان نامجو،
-                    خیابان شیخ صفی،
-                    جنب کوروش،
-                    پلاک ۴۳
-                </p>
-
-                <a
-                    href="https://www.google.com/maps/search/?api=1&query=میدان+نامجو+خیابان+شیخ+صفی+جنب+کوروش+پلاک+43"
-                    target="_blank"
-                    class="map-button">
-
-                    مشاهده روی نقشه
-
-                </a>
-
-            </div>
+<div class="address-grid">
 
 
-            <div class="address-card">
+<div class="address-card">
 
-                <div class="address-icon">
-                    📞
-                </div>
+<div class="address-icon">
+📍
+</div>
 
-                <h3>
-                    شماره تماس
-                </h3>
+<h3>
+آدرس دقیق
+</h3>
 
-                <p>
-                    جهت رزرو نوبت با این شماره تماس بگیرید.
-                </p>
+<p>
+تهران، میدان نامجو،
+خیابان شیخ صفی،
+جنب کوروش،
+پلاک ۴۳
+</p>
 
-                <a
-                    href="tel:09355097780"
-                    style="
-                    display:inline-block;
-                    margin-top:15px;
-                    color:#c45d85;
-                    font-size:22px;
-                    font-weight:bold;
-                    direction:ltr;
-                    ">
+<a
+href="https://www.google.com/maps/search/?api=1&query=میدان+نامجو+خیابان+شیخ+صفی+جنب+کوروش+پلاک+43"
+target="_blank"
+class="map-button">
 
-                    ۰۹۳۵۵۰۹۷۷۸۰
+مشاهده روی نقشه
 
-                </a>
+</a>
 
-            </div>
+</div>
 
 
-        </div>
+<div class="address-card">
 
-    </div>
+<div class="address-icon">
+📞
+</div>
+
+<h3>
+شماره تماس
+</h3>
+
+<p>
+جهت رزرو نوبت و هماهنگی خدمات
+با شماره زیر تماس بگیرید.
+</p>
+
+<a
+href="tel:09355097780"
+style="
+display:inline-block;
+margin-top:15px;
+color:#c45d85;
+font-size:22px;
+font-weight:bold;
+direction:ltr;
+">
+
+۰۹۳۵۵۰۹۷۷۸۰
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
@@ -1116,85 +1207,86 @@
 
 <section class="instagram" id="instagram">
 
-    <div class="container">
+<div class="container">
 
-        <div class="instagram-box">
+<div class="instagram-box">
 
-            <div class="instagram-icon">
-                📸
-            </div>
+<div class="instagram-icon">
+📸
+</div>
 
-            <span class="hero-label">
-                INSTAGRAM
-            </span>
+<span class="hero-label">
+INSTAGRAM
+</span>
 
-            <h2>
-                پیج اینستاگرام
-            </h2>
+<h2>
+پیج اینستاگرام
+</h2>
 
-            <div class="instagram-name">
-                @sarabeauty.lounge
-            </div>
+<div class="instagram-name">
+@sarabeauty.lounge
+</div>
 
-            <br>
+<br>
 
-            <a
-                href="https://instagram.com/sarabeauty.lounge"
-                target="_blank"
-                class="btn btn-primary">
+<a
+href="https://instagram.com/sarabeauty.lounge"
+target="_blank"
+class="btn btn-primary">
 
-                ورود به پیج اینستاگرام
+ورود به پیج اینستاگرام
 
-            </a>
+</a>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= QR CODE ================= -->
+<!-- ================= QR ================= -->
 
 <section class="qr">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title">
+<div class="section-title">
 
-            <span>
-                SCAN
-            </span>
+<span>
+SCAN
+</span>
 
-            <h2>
-                کیوآر کد اینستاگرام
-            </h2>
+<h2>
+کیوآر کد اینستاگرام
+</h2>
 
-            <p>
-                برای ورود سریع به پیج سالن، کد را اسکن کنید.
-            </p>
+<p>
+برای ورود سریع به پیج سالن،
+کد را اسکن کنید.
+</p>
 
-        </div>
+</div>
 
 
-        <div class="qr-card">
+<div class="qr-card">
 
-            <h3>
-                Sara Beauty Lounge
-            </h3>
+<h3>
+Sara Beauty Lounge
+</h3>
 
-            <img
-                class="qr-code"
-                src="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=https%3A%2F%2Finstagram.com%2Fsarabeauty.lounge"
-                alt="QR Code">
+<img
+class="qr-code"
+src="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=https%3A%2F%2Finstagram.com%2Fsarabeauty.lounge"
+alt="QR Code">
 
-            <p>
-                @sarabeauty.lounge
-            </p>
+<p>
+@sarabeauty.lounge
+</p>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
@@ -1203,85 +1295,85 @@
 
 <section class="reviews" id="reviews">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title">
+<div class="section-title">
 
-            <span>
-                REVIEWS
-            </span>
+<span>
+REVIEWS
+</span>
 
-            <h2>
-                نظرات مشتریان
-            </h2>
+<h2>
+نظرات مشتریان
+</h2>
 
-            <p>
-                حس خوب مشتریان برای ما اهمیت زیادی دارد.
-            </p>
+<p>
+رضایت و حس خوب مشتریان برای ما اهمیت زیادی دارد.
+</p>
 
-        </div>
-
-
-        <div class="reviews-grid">
+</div>
 
 
-            <div class="review">
-
-                <div class="stars">
-                    ★★★★★
-                </div>
-
-                <p>
-                    از برخورد و کیفیت کار خیلی راضی بودم
-                    و حتماً دوباره مراجعه می‌کنم.
-                </p>
-
-                <strong>
-                    — مشتری سالن
-                </strong>
-
-            </div>
+<div class="reviews-grid">
 
 
-            <div class="review">
+<div class="review">
 
-                <div class="stars">
-                    ★★★★★
-                </div>
+<div class="stars">
+★★★★★
+</div>
 
-                <p>
-                    محیط سالن خیلی آرام و دلنشین بود
-                    و از نتیجه کارم راضی هستم.
-                </p>
+<p>
+از برخورد و کیفیت کار خیلی راضی بودم
+و تجربه خیلی خوبی داشتم.
+</p>
 
-                <strong>
-                    — مشتری سالن
-                </strong>
+<strong>
+— مشتری سالن
+</strong>
 
-            </div>
-
-
-            <div class="review">
-
-                <div class="stars">
-                    ★★★★★
-                </div>
-
-                <p>
-                    خدمات با دقت انجام شد و تجربه خیلی
-                    خوبی داشتم.
-                </p>
-
-                <strong>
-                    — مشتری سالن
-                </strong>
-
-            </div>
+</div>
 
 
-        </div>
+<div class="review">
 
-    </div>
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+محیط سالن آرام و دلنشین بود و از
+نتیجه کارم رضایت داشتم.
+</p>
+
+<strong>
+— مشتری سالن
+</strong>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+کار با دقت انجام شد و تجربه خوبی
+برای من بود.
+</p>
+
+<strong>
+— مشتری سالن
+</strong>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
@@ -1290,94 +1382,137 @@
 
 <footer>
 
-    <div class="footer-grid">
+<div class="footer-grid">
 
 
-        <div>
+<div>
 
-            <h3>
-                Sara Beauty Lounge
-            </h3>
+<h3>
+Sara Beauty Lounge
+</h3>
 
-            <p>
-                سالن زیبایی سارا شاه حسینی
-                در تهران.
-            </p>
+<p>
+سالن زیبایی سارا شاه حسینی
+در تهران.
+</p>
 
-            <p style="margin-top:10px;">
-                زیبایی، ظرافت و حس خوب.
-            </p>
+<p style="margin-top:10px;">
+زیبایی، ظرافت و حس خوب.
+</p>
 
-        </div>
-
-
-        <div>
-
-            <h3>
-                دسترسی سریع
-            </h3>
-
-            <a href="#home">
-                صفحه اصلی
-            </a>
-
-            <a href="#services">
-                خدمات
-            </a>
-
-            <a href="#reservation">
-                رزرو
-            </a>
-
-            <a href="#address">
-                آدرس
-            </a>
-
-            <a href="#reviews">
-                نظرات
-            </a>
-
-        </div>
+</div>
 
 
-        <div>
+<div>
 
-            <h3>
-                ارتباط با ما
-            </h3>
+<h3>
+دسترسی سریع
+</h3>
 
-            <a href="tel:09355097780">
-                📞 ۰۹۳۵۵۰۹۷۷۸۰
-            </a>
+<a href="#home">
+صفحه اصلی
+</a>
 
-            <a
-                href="https://instagram.com/sarabeauty.lounge"
-                target="_blank">
+<a href="#services">
+خدمات
+</a>
 
-                📸 @sarabeauty.lounge
+<a href="#reservation">
+رزرو
+</a>
 
-            </a>
+<a href="#address">
+آدرس
+</a>
 
-            <p>
-                📍 میدان نامجو، خیابان شیخ صفی،
-                جنب کوروش، پلاک ۴۳
-            </p>
+<a href="#reviews">
+نظرات
+</a>
 
-        </div>
-
-
-    </div>
+</div>
 
 
-    <div class="copyright">
+<div>
 
-        © 2026 Sara Beauty Lounge
-        — تمامی حقوق محفوظ است.
+<h3>
+ارتباط با ما
+</h3>
 
-    </div>
+<a href="tel:09355097780">
+📞 ۰۹۳۵۵۰۹۷۷۸۰
+</a>
+
+<a
+href="https://instagram.com/sarabeauty.lounge"
+target="_blank">
+
+📸 @sarabeauty.lounge
+
+</a>
+
+<p>
+📍 میدان نامجو، خیابان شیخ صفی،
+جنب کوروش، پلاک ۴۳
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 Sara Beauty Lounge
+— تمامی حقوق محفوظ است.
+
+</div>
 
 </footer>
 
 
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+/* پیام خوش آمدگویی */
+
+function startSite(){
+
+    document
+    .getElementById("welcome")
+    .classList.add("hide");
+
+}
+
+
+/* تاریخ روز */
+
+function showDate(){
+
+    const today = new Date();
+
+    const options = {
+        weekday:"long",
+        year:"numeric",
+        month:"long",
+        day:"numeric"
+    };
+
+    const dateText = today.toLocaleDateString(
+        "fa-IR",
+        options
+    );
+
+    document.getElementById("date").innerHTML =
+        "📅 " + dateText;
+
+}
+
+showDate();
+
+</script>
+
+
 </body>
-    </html>
+</html>
