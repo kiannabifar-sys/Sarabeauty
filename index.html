@@ -9,1195 +9,1018 @@
 <style>
 
 :root{
-    --bg:#faf7f8;
-    --card:#ffffff;
-    --text:#332e32;
-    --muted:#756d73;
-    --pink:#c85f87;
-    --pink2:#df82a5;
-    --soft:#fae7ee;
-    --border:#eadce3;
-    --dark:#29252a;
-    --shadow:rgba(70,45,60,.12);
+--bg:#faf7f8;
+--card:#ffffff;
+--text:#302b2f;
+--muted:#756d73;
+--pink:#c85f87;
+--pink2:#df82a5;
+--soft:#fae7ee;
+--border:#eadce3;
+--dark:#29252a;
+--shadow:rgba(70,45,60,.12);
 }
 
 body.dark{
-    --bg:#141215;
-    --card:#211e21;
-    --text:#f7eef2;
-    --muted:#bdb3b9;
-    --pink:#e17ca4;
-    --pink2:#ed91b4;
-    --soft:#382630;
-    --border:#443840;
-    --dark:#0d0c0e;
-    --shadow:rgba(0,0,0,.4);
+--bg:#141215;
+--card:#211e21;
+--text:#f7eef2;
+--muted:#bdb3b9;
+--pink:#e17ca4;
+--pink2:#ed91b4;
+--soft:#382630;
+--border:#443840;
+--dark:#0d0c0e;
+--shadow:rgba(0,0,0,.4);
 }
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
-
-html{
-    scroll-padding-top:90px;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:Tahoma,Arial,sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:2;
-    transition:.4s;
+font-family:Tahoma,Arial,sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:2;
+transition:.4s;
 }
 
 a{
-    text-decoration:none;
-    color:inherit;
+text-decoration:none;
+color:inherit;
 }
 
 button{
-    font-family:inherit;
+font-family:inherit;
 }
-
-
-/* =========================
-   WELCOME
-========================= */
-
-.welcome{
-    position:fixed;
-    inset:0;
-    z-index:99999;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    padding:25px;
-    text-align:center;
-
-    color:white;
-
-    background:
-    radial-gradient(circle at 15% 20%,rgba(225,130,165,.3),transparent 30%),
-    radial-gradient(circle at 85% 80%,rgba(220,170,190,.2),transparent 30%),
-    linear-gradient(135deg,#302b30,#59434e);
-
-    transition:.7s;
-}
-
-.welcome.hide{
-    opacity:0;
-    visibility:hidden;
-}
-
-.welcome-box{
-    max-width:750px;
-    animation:welcomeIn 1s ease;
-}
-
-@keyframes welcomeIn{
-    from{
-        opacity:0;
-        transform:translateY(35px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.welcome-logo{
-    width:100px;
-    height:100px;
-
-    margin:0 auto 20px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    font-size:43px;
-    font-weight:bold;
-
-    background:linear-gradient(135deg,#e58cab,#a94f75);
-
-    box-shadow:0 20px 50px rgba(0,0,0,.3);
-}
-
-.welcome-small{
-    color:#efa7bf;
-    font-size:13px;
-    font-weight:bold;
-}
-
-.welcome h1{
-    font-size:clamp(30px,6vw,58px);
-    line-height:1.45;
-    margin:10px 0 18px;
-}
-
-.welcome p{
-    color:#ded6da;
-    font-size:14px;
-}
-
-.start-button{
-    display:inline-block;
-
-    margin-top:30px;
-    padding:14px 35px;
-
-    border-radius:16px;
-
-    background:linear-gradient(135deg,#d8759d,#a94e75);
-
-    color:white;
-
-    font-size:14px;
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-.start-button:hover{
-    transform:translateY(-4px) scale(1.02);
-}
-
-
-/* =========================
-   DATE
-========================= */
-
-.date-box{
-    position:fixed;
-
-    top:90px;
-    left:17px;
-
-    z-index:900;
-
-    padding:6px 12px;
-
-    border-radius:12px;
-
-    background:var(--card);
-
-    border:1px solid var(--border);
-
-    color:var(--pink);
-
-    font-size:10px;
-
-    box-shadow:0 8px 25px var(--shadow);
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-header{
-    position:fixed;
-
-    top:0;
-    right:0;
-    left:0;
-
-    z-index:1000;
-
-    background:var(--card);
-
-    border-bottom:1px solid var(--border);
-
-    backdrop-filter:blur(15px);
-}
-
-.nav{
-    max-width:1200px;
-    height:76px;
-
-    margin:auto;
-    padding:0 20px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-
-    font-size:14px;
-    font-weight:bold;
-}
-
-.logo-icon{
-    width:44px;
-    height:44px;
-
-    border-radius:50%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    color:white;
-
-    background:linear-gradient(135deg,var(--pink2),#a94f75);
-}
-
-nav{
-    display:flex;
-    gap:18px;
-}
-
-nav a{
-    color:var(--muted);
-    font-size:11px;
-    transition:.25s;
-}
-
-nav a:hover{
-    color:var(--pink);
-}
-
-.nav-call{
-    padding:7px 15px;
-
-    border-radius:11px;
-
-    background:var(--pink);
-
-    color:white!important;
-
-    font-size:11px;
-}
-
-.theme-btn{
-    width:42px;
-    height:42px;
-
-    border-radius:50%;
-
-    border:1px solid var(--border);
-
-    background:var(--card);
-
-    color:var(--text);
-
-    cursor:pointer;
-
-    font-size:18px;
-
-    transition:.3s;
-}
-
-.theme-btn:hover{
-    transform:rotate(20deg) scale(1.08);
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-    min-height:100vh;
-
-    padding:155px 20px 90px;
-
-    display:flex;
-    align-items:center;
-
-    text-align:center;
-
-    background:
-    radial-gradient(circle at 85% 15%,rgba(216,120,155,.18),transparent 30%),
-    radial-gradient(circle at 10% 80%,rgba(170,155,170,.12),transparent 32%),
-    var(--bg);
-}
-
-.hero-container{
-    width:100%;
-    max-width:1000px;
-    margin:auto;
-}
-
-.hero-label{
-    color:var(--pink);
-    font-size:11px;
-    font-weight:bold;
-}
-
-.hero h1{
-    font-size:clamp(43px,7vw,78px);
-    line-height:1.3;
-    margin:12px 0 18px;
-}
-
-.hero h1 span{
-    color:var(--pink);
-}
-
-.hero-description{
-    max-width:790px;
-
-    margin:auto;
-
-    color:var(--muted);
-
-    font-size:14px;
-}
-
-.hero-buttons{
-    margin-top:30px;
-
-    display:flex;
-    justify-content:center;
-
-    gap:12px;
-
-    flex-wrap:wrap;
-}
-
-.btn{
-    display:inline-block;
-
-    padding:12px 23px;
-
-    border-radius:14px;
-
-    font-size:12px;
-    font-weight:bold;
-
-    transition:.3s;
-}
-
-.btn-primary{
-    color:white;
-
-    background:linear-gradient(135deg,var(--pink2),#a84e74);
-
-    box-shadow:0 12px 28px rgba(180,70,115,.2);
-}
-
-.btn-primary:hover{
-    transform:translateY(-3px);
-}
-
-.btn-light{
-    background:var(--card);
-
-    border:1px solid var(--border);
-
-    color:var(--text);
-}
-
-.btn-light:hover{
-    transform:translateY(-3px);
-}
-
-
-/* =========================
-   GENERAL
-========================= */
 
 section{
-    padding:95px 20px;
+padding:90px 20px;
 }
 
 .container{
-    max-width:1100px;
-    margin:auto;
+max-width:1100px;
+margin:auto;
 }
 
+
+/* WELCOME */
+
+.welcome{
+position:fixed;
+inset:0;
+z-index:99999;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:25px;
+text-align:center;
+color:white;
+
+background:
+radial-gradient(circle at 15% 20%,rgba(225,130,165,.3),transparent 30%),
+radial-gradient(circle at 85% 80%,rgba(220,170,190,.2),transparent 30%),
+linear-gradient(135deg,#302b30,#59434e);
+
+transition:.7s;
+}
+
+.welcome.hide{
+opacity:0;
+visibility:hidden;
+}
+
+.welcome-box{
+max-width:750px;
+animation:welcomeIn 1s ease;
+}
+
+@keyframes welcomeIn{
+from{
+opacity:0;
+transform:translateY(35px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.welcome-logo{
+width:100px;
+height:100px;
+margin:0 auto 20px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-size:43px;
+font-weight:bold;
+background:linear-gradient(135deg,#e58cab,#a94f75);
+box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
+
+.welcome-small{
+color:#efa7bf;
+font-size:13px;
+font-weight:bold;
+}
+
+.welcome h1{
+font-size:clamp(30px,6vw,58px);
+line-height:1.45;
+margin:10px 0 18px;
+}
+
+.welcome p{
+color:#ded6da;
+font-size:14px;
+}
+
+.start-button{
+display:inline-block;
+margin-top:30px;
+padding:14px 35px;
+border-radius:16px;
+background:linear-gradient(135deg,#d8759d,#a94e75);
+color:white;
+font-size:14px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.start-button:hover{
+transform:translateY(-4px) scale(1.02);
+}
+
+
+/* DATE */
+
+.date-box{
+position:fixed;
+top:90px;
+left:17px;
+z-index:900;
+padding:6px 12px;
+border-radius:12px;
+background:var(--card);
+border:1px solid var(--border);
+color:var(--pink);
+font-size:10px;
+box-shadow:0 8px 25px var(--shadow);
+}
+
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+right:0;
+left:0;
+z-index:1000;
+background:var(--card);
+border-bottom:1px solid var(--border);
+backdrop-filter:blur(15px);
+}
+
+.nav{
+max-width:1200px;
+height:76px;
+margin:auto;
+padding:0 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:14px;
+font-weight:bold;
+}
+
+.logo-icon{
+width:44px;
+height:44px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+background:linear-gradient(135deg,var(--pink2),#a94f75);
+}
+
+nav{
+display:flex;
+gap:17px;
+}
+
+nav a{
+color:var(--muted);
+font-size:11px;
+transition:.25s;
+}
+
+nav a:hover{
+color:var(--pink);
+}
+
+.nav-call{
+padding:7px 15px;
+border-radius:11px;
+background:var(--pink);
+color:white!important;
+font-size:11px;
+}
+
+.theme-btn{
+width:42px;
+height:42px;
+border-radius:50%;
+border:1px solid var(--border);
+background:var(--card);
+color:var(--text);
+cursor:pointer;
+font-size:18px;
+transition:.3s;
+}
+
+.theme-btn:hover{
+transform:rotate(20deg) scale(1.08);
+}
+
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+padding:155px 20px 90px;
+display:flex;
+align-items:center;
+text-align:center;
+
+background:
+radial-gradient(circle at 85% 15%,rgba(216,120,155,.18),transparent 30%),
+radial-gradient(circle at 10% 80%,rgba(170,155,170,.12),transparent 32%),
+var(--bg);
+}
+
+.hero-container{
+width:100%;
+max-width:1000px;
+margin:auto;
+}
+
+.hero-label{
+color:var(--pink);
+font-size:11px;
+font-weight:bold;
+}
+
+.hero h1{
+font-size:clamp(43px,7vw,78px);
+line-height:1.3;
+margin:12px 0 18px;
+}
+
+.hero h1 span{
+color:var(--pink);
+}
+
+.hero-description{
+max-width:790px;
+margin:auto;
+color:var(--muted);
+font-size:14px;
+}
+
+.hero-buttons{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.btn{
+display:inline-block;
+padding:12px 23px;
+border-radius:14px;
+font-size:12px;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn-primary{
+color:white;
+background:linear-gradient(135deg,var(--pink2),#a84e74);
+box-shadow:0 12px 28px rgba(180,70,115,.2);
+}
+
+.btn-primary:hover{
+transform:translateY(-3px);
+}
+
+.btn-light{
+background:var(--card);
+border:1px solid var(--border);
+color:var(--text);
+}
+
+.btn-light:hover{
+transform:translateY(-3px);
+}
+
+
+/* TITLES */
+
 .section-title{
-    text-align:center;
-    margin-bottom:48px;
+text-align:center;
+margin-bottom:45px;
 }
 
 .section-title span{
-    color:var(--pink);
-    font-size:11px;
-    font-weight:bold;
+color:var(--pink);
+font-size:11px;
+font-weight:bold;
 }
 
 .section-title h2{
-    font-size:36px;
-    margin:5px 0 8px;
+font-size:36px;
+margin:5px 0 8px;
 }
 
 .section-title p{
-    color:var(--muted);
-    font-size:13px;
+color:var(--muted);
+font-size:13px;
 }
 
 
-/* =========================
-   SERVICES
-========================= */
+/* SERVICES */
 
 .services{
-    background:var(--card);
+background:var(--card);
 }
 
 .services-grid{
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:18px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
 }
 
 .service{
-    padding:30px 22px;
-
-    text-align:center;
-
-    border:1px solid var(--border);
-
-    border-radius:24px;
-
-    background:var(--card);
-
-    transition:.35s;
+padding:30px 22px;
+text-align:center;
+border:1px solid var(--border);
+border-radius:24px;
+background:var(--card);
+transition:.35s;
 }
 
 .service:hover{
-    transform:translateY(-8px);
-
-    border-color:var(--pink2);
-
-    box-shadow:0 20px 45px var(--shadow);
+transform:translateY(-8px);
+border-color:var(--pink2);
+box-shadow:0 20px 45px var(--shadow);
 }
 
 .service-icon{
-    width:67px;
-    height:67px;
-
-    margin:0 auto 15px;
-
-    border-radius:20px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:var(--soft);
-
-    font-size:28px;
+width:67px;
+height:67px;
+margin:0 auto 15px;
+border-radius:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:var(--soft);
+font-size:28px;
 }
 
 .service h3{
-    font-size:16px;
-    margin-bottom:8px;
+font-size:16px;
+margin-bottom:8px;
 }
 
 .service p{
-    color:var(--muted);
-    font-size:11px;
+color:var(--muted);
+font-size:11px;
 }
 
 
-/* =========================
-   WHY
-========================= */
+/* WHY */
 
 .why{
-    background:linear-gradient(135deg,var(--bg),var(--soft));
+background:linear-gradient(135deg,var(--bg),var(--soft));
 }
 
 .why-intro{
-    max-width:820px;
-
-    margin:0 auto 40px;
-
-    text-align:center;
-
-    color:var(--muted);
-
-    font-size:14px;
+max-width:820px;
+margin:0 auto 40px;
+text-align:center;
+color:var(--muted);
+font-size:14px;
 }
 
 .why-grid{
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
 }
 
 .why-card{
-    padding:32px 30px;
-
-    background:var(--card);
-
-    border:1px solid var(--border);
-
-    border-radius:25px;
-
-    transition:.35s;
+padding:32px 30px;
+background:var(--card);
+border:1px solid var(--border);
+border-radius:25px;
+transition:.35s;
 }
 
 .why-card:hover{
-    transform:translateY(-6px);
-
-    box-shadow:0 20px 45px var(--shadow);
+transform:translateY(-6px);
+box-shadow:0 20px 45px var(--shadow);
 }
 
 .why-number{
-    display:inline-flex;
-
-    width:42px;
-    height:42px;
-
-    align-items:center;
-    justify-content:center;
-
-    border-radius:13px;
-
-    background:var(--soft);
-
-    color:var(--pink);
-
-    font-weight:bold;
-
-    margin-bottom:12px;
+display:inline-flex;
+width:42px;
+height:42px;
+align-items:center;
+justify-content:center;
+border-radius:13px;
+background:var(--soft);
+color:var(--pink);
+font-weight:bold;
+margin-bottom:12px;
 }
 
 .why-card h3{
-    font-size:18px;
-    margin-bottom:10px;
+font-size:18px;
+margin-bottom:10px;
 }
 
 .why-card p{
-    color:var(--muted);
-    font-size:12px;
+color:var(--muted);
+font-size:12px;
 }
 
 .why-final{
-    max-width:750px;
-
-    margin:40px auto 0;
-
-    padding:25px;
-
-    border-radius:22px;
-
-    text-align:center;
-
-    background:linear-gradient(135deg,#39333a,#55404b);
-
-    color:white;
-
-    font-size:17px;
-    font-weight:bold;
+max-width:750px;
+margin:40px auto 0;
+padding:25px;
+border-radius:22px;
+text-align:center;
+background:linear-gradient(135deg,#39333a,#55404b);
+color:white;
+font-size:17px;
+font-weight:bold;
 }
 
 
-/* =========================
-   RESERVATION
-========================= */
+/* DISCOUNT */
+
+.discount{
+background:var(--card);
+}
+
+.discount-box{
+max-width:850px;
+margin:auto;
+padding:50px 25px;
+border-radius:32px;
+text-align:center;
+color:white;
+
+background:
+radial-gradient(circle at 20% 20%,rgba(255,255,255,.12),transparent 25%),
+linear-gradient(135deg,#3b3036,#654052);
+
+box-shadow:0 20px 50px var(--shadow);
+}
+
+.discount-badge{
+display:inline-block;
+padding:5px 13px;
+border-radius:20px;
+background:#efa5bf;
+color:#392c32;
+font-size:11px;
+font-weight:bold;
+margin-bottom:12px;
+}
+
+.discount-box h2{
+font-size:38px;
+}
+
+.discount-code{
+display:inline-block;
+direction:ltr;
+margin:18px 0;
+padding:10px 25px;
+border:2px dashed #efa5bf;
+border-radius:15px;
+color:#ffd5e3;
+font-size:27px;
+font-weight:bold;
+letter-spacing:3px;
+}
+
+.discount-box p{
+color:#ddd1d6;
+font-size:13px;
+}
+
+.copy-code{
+border:none;
+margin-top:20px;
+padding:11px 22px;
+border-radius:13px;
+background:#efa5bf;
+color:#392c32;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.copy-code:hover{
+transform:translateY(-3px);
+}
+
+.copy-message{
+margin-top:10px;
+font-size:11px;
+color:#efa5bf;
+min-height:20px;
+}
+
+
+/* RESERVATION */
 
 .reservation{
-    background:var(--card);
+background:var(--bg);
 }
 
 .reservation-box{
-    padding:58px 25px;
-
-    border-radius:32px;
-
-    text-align:center;
-
-    color:white;
-
-    background:linear-gradient(135deg,#39343a,#57414d);
-
-    box-shadow:0 20px 50px var(--shadow);
+padding:58px 25px;
+border-radius:32px;
+text-align:center;
+color:white;
+background:linear-gradient(135deg,#39343a,#57414d);
+box-shadow:0 20px 50px var(--shadow);
 }
 
 .reservation-content span{
-    color:#efa5be;
-    font-size:11px;
+color:#efa5be;
+font-size:11px;
 }
 
 .reservation-content h2{
-    font-size:35px;
+font-size:35px;
 }
 
 .reservation-content p{
-    color:#d5cdd1;
-    font-size:13px;
+color:#d5cdd1;
+font-size:13px;
 }
 
 .phone{
-    display:inline-block;
-
-    direction:ltr;
-
-    margin:12px 0 20px;
-
-    color:#f1a9c1;
-
-    font-size:26px;
-    font-weight:bold;
+display:inline-block;
+direction:ltr;
+margin:12px 0 20px;
+color:#f1a9c1;
+font-size:26px;
+font-weight:bold;
 }
 
 
-/* =========================
-   ADDRESS
-========================= */
+/* ADDRESS */
 
 .address{
-    background:var(--bg);
+background:var(--bg);
 }
 
 .address-grid{
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:20px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
 }
 
 .address-card{
-    padding:35px;
-
-    background:var(--card);
-
-    border-radius:25px;
-
-    border:1px solid var(--border);
-
-    transition:.3s;
+padding:35px;
+background:var(--card);
+border-radius:25px;
+border:1px solid var(--border);
+transition:.3s;
 }
 
 .address-card:hover{
-    transform:translateY(-5px);
-
-    box-shadow:0 15px 35px var(--shadow);
+transform:translateY(-5px);
+box-shadow:0 15px 35px var(--shadow);
 }
 
 .address-icon{
-    font-size:31px;
+font-size:31px;
 }
 
 .address-card h3{
-    margin-bottom:8px;
+margin-bottom:8px;
 }
 
 .address-card p{
-    color:var(--muted);
-    font-size:13px;
+color:var(--muted);
+font-size:13px;
 }
 
 .map-button{
-    display:inline-block;
-
-    margin-top:18px;
-
-    padding:9px 17px;
-
-    background:var(--soft);
-
-    color:var(--pink);
-
-    border-radius:11px;
-
-    font-size:11px;
+display:inline-block;
+margin-top:18px;
+padding:9px 17px;
+background:var(--soft);
+color:var(--pink);
+border-radius:11px;
+font-size:11px;
 }
 
 
-/* =========================
-   INSTAGRAM
-========================= */
+/* INSTAGRAM */
 
 .instagram{
-    background:var(--card);
-
-    text-align:center;
+background:var(--card);
+text-align:center;
 }
 
 .instagram-box{
-    max-width:700px;
-
-    margin:auto;
-
-    padding:55px 25px;
-
-    border-radius:30px;
-
-    background:linear-gradient(135deg,var(--card),var(--soft));
-
-    border:1px solid var(--border);
-
-    box-shadow:0 15px 40px var(--shadow);
+max-width:700px;
+margin:auto;
+padding:55px 25px;
+border-radius:30px;
+background:linear-gradient(135deg,var(--card),var(--soft));
+border:1px solid var(--border);
+box-shadow:0 15px 40px var(--shadow);
 }
 
 .instagram-icon{
-    font-size:50px;
+font-size:50px;
 }
 
 .instagram-box h2{
-    font-size:30px;
+font-size:30px;
 }
 
 .instagram-name{
-    display:inline-block;
-
-    direction:ltr;
-
-    color:var(--pink);
-
-    font-size:20px;
-    font-weight:bold;
-
-    margin:7px 0 20px;
+display:inline-block;
+direction:ltr;
+color:var(--pink);
+font-size:20px;
+font-weight:bold;
+margin:7px 0 20px;
 }
 
 
-/* =========================
-   RATING
-========================= */
+/* RATING */
 
 .rating-section{
-    background:var(--bg);
+background:var(--bg);
 }
 
 .rating-box{
-    max-width:760px;
-
-    margin:auto;
-
-    padding:45px 25px;
-
-    text-align:center;
-
-    background:var(--card);
-
-    border:1px solid var(--border);
-
-    border-radius:30px;
-
-    box-shadow:0 18px 45px var(--shadow);
+max-width:760px;
+margin:auto;
+padding:45px 25px;
+text-align:center;
+background:var(--card);
+border:1px solid var(--border);
+border-radius:30px;
+box-shadow:0 18px 45px var(--shadow);
 }
 
 .rating-main{
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
-
-    gap:15px;
-
-    margin-bottom:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:15px;
+margin-bottom:20px;
 }
 
 .rating-number{
-    font-size:48px;
-
-    font-weight:bold;
-
-    color:var(--pink);
+font-size:48px;
+font-weight:bold;
+color:var(--pink);
 }
 
 .rating-stars{
-    direction:ltr;
-
-    color:#e0a02d;
-
-    font-size:25px;
-
-    letter-spacing:3px;
+direction:ltr;
+color:#e0a02d;
+font-size:25px;
+letter-spacing:3px;
 }
 
 .rating-text{
-    color:var(--muted);
-    font-size:12px;
+color:var(--muted);
+font-size:12px;
 }
 
 .star-buttons{
-    direction:ltr;
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:7px;
-
-    margin:20px 0;
+direction:ltr;
+display:flex;
+justify-content:center;
+gap:7px;
+margin:20px 0;
 }
 
 .star{
-    border:none;
-
-    background:transparent;
-
-    font-size:34px;
-
-    color:#c9c1c5;
-
-    cursor:pointer;
-
-    transition:.2s;
+border:none;
+background:transparent;
+font-size:34px;
+color:#c9c1c5;
+cursor:pointer;
+transition:.2s;
 }
 
 .star:hover,
 .star.selected{
-    color:#e0a02d;
-
-    transform:scale(1.15);
+color:#e0a02d;
+transform:scale(1.15);
 }
 
 .rating-message{
-    color:var(--pink);
-
-    font-size:12px;
-
-    min-height:25px;
+color:var(--pink);
+font-size:12px;
+min-height:25px;
 }
 
 
-/* =========================
-   SHARE
-========================= */
+/* SHARE */
 
 .share-section{
-    background:var(--card);
+background:var(--card);
 }
 
 .share-box{
-    max-width:850px;
-
-    margin:auto;
-
-    padding:55px 25px;
-
-    text-align:center;
-
-    border-radius:32px;
-
-    background:
-    radial-gradient(circle at 10% 20%,rgba(223,127,164,.18),transparent 30%),
-    linear-gradient(135deg,var(--soft),var(--card));
-
-    border:1px solid var(--border);
-
-    box-shadow:0 20px 50px var(--shadow);
+max-width:850px;
+margin:auto;
+padding:55px 25px;
+text-align:center;
+border-radius:32px;
+background:
+radial-gradient(circle at 10% 20%,rgba(223,127,164,.18),transparent 30%),
+linear-gradient(135deg,var(--soft),var(--card));
+border:1px solid var(--border);
+box-shadow:0 20px 50px var(--shadow);
 }
 
 .share-icon{
-    font-size:48px;
+font-size:48px;
 }
 
 .share-box h2{
-    font-size:32px;
-
-    margin-bottom:10px;
+font-size:32px;
+margin-bottom:10px;
 }
 
 .share-box p{
-    max-width:650px;
-
-    margin:auto;
-
-    color:var(--muted);
-
-    font-size:13px;
+max-width:650px;
+margin:auto;
+color:var(--muted);
+font-size:13px;
 }
 
 .share-button{
-    margin-top:25px;
-
-    border:none;
-
-    padding:13px 25px;
-
-    border-radius:15px;
-
-    color:white;
-
-    background:linear-gradient(135deg,var(--pink2),#a84e74);
-
-    font-size:12px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    box-shadow:0 12px 28px rgba(180,70,115,.2);
-
-    transition:.3s;
+margin-top:25px;
+border:none;
+padding:13px 25px;
+border-radius:15px;
+color:white;
+background:linear-gradient(135deg,var(--pink2),#a84e74);
+font-size:12px;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 12px 28px rgba(180,70,115,.2);
+transition:.3s;
 }
 
 .share-button:hover{
-    transform:translateY(-4px);
+transform:translateY(-4px);
 }
 
 .share-status{
-    margin-top:14px;
-
-    min-height:25px;
-
-    color:var(--pink);
-
-    font-size:11px;
+margin-top:14px;
+min-height:25px;
+color:var(--pink);
+font-size:11px;
 }
 
 
-/* =========================
-   QR
-========================= */
+/* QR */
 
 .qr{
-    background:var(--bg);
-
-    text-align:center;
+background:var(--bg);
+text-align:center;
 }
 
 .qr-card{
-    max-width:410px;
-
-    margin:auto;
-
-    padding:35px;
-
-    background:var(--card);
-
-    border-radius:30px;
-
-    box-shadow:0 15px 45px var(--shadow);
-
-    border:1px solid var(--border);
+max-width:410px;
+margin:auto;
+padding:35px;
+background:var(--card);
+border-radius:30px;
+box-shadow:0 15px 45px var(--shadow);
+border:1px solid var(--border);
 }
 
 .qr-code{
-    width:210px;
-    height:210px;
-
-    display:block;
-
-    margin:20px auto;
+width:210px;
+height:210px;
+display:block;
+margin:20px auto;
 }
 
 .qr-card p{
-    color:var(--muted);
-    font-size:12px;
+color:var(--muted);
+font-size:12px;
 }
 
 
-/* =========================
-   REVIEWS
-========================= */
+/* REVIEWS */
 
 .reviews{
-    background:var(--card);
+background:var(--card);
 }
 
 .reviews-grid{
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:18px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
 }
 
 .review{
-    padding:28px;
-
-    border:1px solid var(--border);
-
-    border-radius:23px;
-
-    background:var(--card);
+padding:28px;
+border:1px solid var(--border);
+border-radius:23px;
+background:var(--card);
 }
 
 .stars{
-    color:#e0a02d;
-
-    letter-spacing:2px;
+color:#e0a02d;
+letter-spacing:2px;
 }
 
 .review p{
-    color:var(--muted);
-
-    font-size:12px;
+color:var(--muted);
+font-size:12px;
 }
 
 .review strong{
-    display:block;
-
-    margin-top:15px;
-
-    font-size:12px;
+display:block;
+margin-top:15px;
+font-size:12px;
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
-    padding:55px 20px 25px;
-
-    background:var(--dark);
-
-    color:white;
+padding:55px 20px 25px;
+background:var(--dark);
+color:white;
 }
 
 .footer-grid{
-    max-width:1100px;
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:1.5fr 1fr 1fr;
-
-    gap:35px;
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1.5fr 1fr 1fr;
+gap:35px;
 }
 
 footer h3{
-    margin-bottom:14px;
+margin-bottom:14px;
 }
 
 footer p,
 footer a{
-    color:#bcb4b9;
-
-    font-size:12px;
+color:#bcb4b9;
+font-size:12px;
 }
 
 footer a{
-    display:block;
-
-    margin-bottom:7px;
+display:block;
+margin-bottom:7px;
 }
 
 .copyright{
-    max-width:1100px;
-
-    margin:35px auto 0;
-
-    padding-top:20px;
-
-    border-top:1px solid #484247;
-
-    text-align:center;
-
-    color:#969095;
-
-    font-size:10px;
+max-width:1100px;
+margin:35px auto 0;
+padding-top:20px;
+border-top:1px solid #484247;
+text-align:center;
+color:#969095;
+font-size:10px;
 }
 
 
-/* =========================
-   ANIMATION
-========================= */
+/* ANIMATION */
 
 .service,
 .why-card,
 .review,
 .address-card{
-    animation:fadeUp .7s ease both;
+animation:fadeUp .7s ease both;
 }
 
 @keyframes fadeUp{
-
-    from{
-        opacity:0;
-        transform:translateY(18px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
+from{
+opacity:0;
+transform:translateY(18px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:850px){
 
-    nav{
-        display:none;
-    }
+nav{
+display:none;
+}
 
-    .services-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
+.services-grid{
+grid-template-columns:repeat(2,1fr);
+}
 
-    .why-grid{
-        grid-template-columns:1fr;
-    }
+.why-grid{
+grid-template-columns:1fr;
+}
 
-    .reviews-grid{
-        grid-template-columns:1fr;
-    }
+.reviews-grid{
+grid-template-columns:1fr;
+}
 
-    .address-grid{
-        grid-template-columns:1fr;
-    }
+.address-grid{
+grid-template-columns:1fr;
+}
 
-    .footer-grid{
-        grid-template-columns:1fr;
+.footer-grid{
+grid-template-columns:1fr;
+text-align:center;
+}
 
-        text-align:center;
-    }
 }
 
 @media(max-width:550px){
 
-    section{
-        padding:75px 15px;
-    }
+section{
+padding:75px 15px;
+}
 
-    .hero{
-        padding-top:135px;
-    }
+.hero{
+padding-top:135px;
+}
 
-    .hero h1{
-        font-size:42px;
-    }
+.hero h1{
+font-size:42px;
+}
 
-    .services-grid{
-        grid-template-columns:1fr;
-    }
+.services-grid{
+grid-template-columns:1fr;
+}
 
-    .date-box{
-        top:83px;
-        left:8px;
+.date-box{
+top:83px;
+left:8px;
+font-size:8px;
+}
 
-        font-size:8px;
-    }
+.rating-number{
+font-size:40px;
+}
 
-    .rating-number{
-        font-size:40px;
-    }
+.star{
+font-size:30px;
+}
 
-    .star{
-        font-size:30px;
-    }
+.share-box h2{
+font-size:27px;
+}
 
-    .share-box h2{
-        font-size:27px;
-    }
+.discount-box h2{
+font-size:30px;
+}
+
+.discount-code{
+font-size:22px;
+}
 
 }
 
@@ -1212,37 +1035,37 @@ footer a{
 
 <div class="welcome" id="welcome">
 
-    <div class="welcome-box">
+<div class="welcome-box">
 
-        <div class="welcome-logo">
-            S
-        </div>
+<div class="welcome-logo">
+S
+</div>
 
-        <div class="welcome-small">
-            ✦ SARA BEAUTY LOUNGE ✦
-        </div>
+<div class="welcome-small">
+✦ SARA BEAUTY LOUNGE ✦
+</div>
 
-        <h1>
-            به سایت سالن زیبایی
-            <br>
-            سارا شاه حسینی خوش آمدید
-        </h1>
+<h1>
+به سایت سالن زیبایی
+<br>
+سارا شاه حسینی خوش آمدید
+</h1>
 
-        <p>
-            زیبایی، ظرافت و حس خوب؛
-            اینجا جایی است که برای زیبایی
-            و آرامش شما اهمیت ویژه‌ای قائل هستیم.
-        </p>
+<p>
+زیبایی، ظرافت و حس خوب؛
+اینجا جایی است که برای زیبایی
+و آرامش شما اهمیت ویژه‌ای قائل هستیم.
+</p>
 
-        <div
-            class="start-button"
-            onclick="startSite()">
+<div
+class="start-button"
+onclick="startSite()">
 
-            شروع بازدید ✦
+شروع بازدید ✦
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </div>
 
@@ -1250,7 +1073,7 @@ footer a{
 <!-- DATE -->
 
 <div class="date-box" id="date">
-    📅 در حال نمایش تاریخ...
+📅 در حال نمایش تاریخ...
 </div>
 
 
@@ -1262,13 +1085,13 @@ footer a{
 
 <a href="#home" class="logo">
 
-    <div class="logo-icon">
-        S
-    </div>
+<div class="logo-icon">
+S
+</div>
 
-    <span>
-        سارا شاه حسینی
-    </span>
+<span>
+سارا شاه حسینی
+</span>
 
 </a>
 
@@ -1276,17 +1099,11 @@ footer a{
 <nav>
 
 <a href="#home">صفحه اصلی</a>
-
 <a href="#services">خدمات</a>
-
 <a href="#why">چرا ما؟</a>
-
+<a href="#discount">تخفیف</a>
 <a href="#reservation">رزرو</a>
-
 <a href="#rating">امتیاز</a>
-
-<a href="#share">معرفی</a>
-
 <a href="#address">آدرس</a>
 
 </nav>
@@ -1295,19 +1112,19 @@ footer a{
 <div style="display:flex;align-items:center;gap:8px;">
 
 <button
-    class="theme-btn"
-    id="themeButton"
-    onclick="toggleTheme()">
+class="theme-btn"
+id="themeButton"
+onclick="toggleTheme()">
 
-    🌙
+🌙
 
 </button>
 
 <a
-    href="tel:09355097780"
-    class="nav-call">
+href="tel:09355097780"
+class="nav-call">
 
-    تماس
+تماس
 
 </a>
 
@@ -1325,15 +1142,15 @@ footer a{
 <div class="hero-container">
 
 <span class="hero-label">
-    ✦ SARA BEAUTY LOUNGE ✦
+✦ SARA BEAUTY LOUNGE ✦
 </span>
 
 <h1>
 
-    زیبایی تو،
-    <br>
+زیبایی تو،
+<br>
 
-    <span>سبک توست.</span>
+<span>سبک توست.</span>
 
 </h1>
 
@@ -1346,24 +1163,27 @@ footer a{
 
 از خدمات تخصصی مو و ناخن گرفته تا میکاپ،
 شینیون، خدمات VIP عروس، مژه، فیشیال،
-لیفت صورت، میکروبلیدینگ و شیدینگ لب؛
-هدف ما این است که هر مراجعه برای شما
-تجربه‌ای زیبا و رضایت‌بخش باشد.
+لیفت صورت، میکروبلیدینگ، شیدینگ لب،
+اپیلاسیون و تتو بدن.
 
 </p>
 
 
 <div class="hero-buttons">
 
-<a href="#services" class="btn btn-primary">
-    شروع بازدید ←
+<a
+href="#services"
+class="btn btn-primary">
+
+شروع بازدید ←
+
 </a>
 
 <a
 href="tel:09355097780"
 class="btn btn-light">
 
-    📞 تماس برای رزرو
+📞 تماس برای رزرو
 
 </a>
 
@@ -1385,7 +1205,7 @@ class="btn btn-light">
 <span>OUR SERVICES</span>
 
 <h2>
-    خدمات سالن
+خدمات سالن
 </h2>
 
 <p>
@@ -1399,318 +1219,192 @@ class="btn btn-light">
 <div class="services-grid">
 
 
-<!-- 01 -->
-
 <div class="service">
-
-<div class="service-icon">
-    💅
-</div>
-
-<h3>
-    ناخن
-</h3>
-
+<div class="service-icon">💅</div>
+<h3>ناخن</h3>
 <p>
 خدمات زیبایی و مراقبت از ناخن
-با توجه به فرم دست و سلیقه شما،
+با توجه به فرم دست و سلیقه شما
 برای داشتن ظاهری مرتب و زیبا.
 </p>
-
 </div>
 
-
-<!-- 02 -->
 
 <div class="service">
-
-<div class="service-icon">
-    🎨
-</div>
-
-<h3>
-    رنگ و لایت
-</h3>
-
+<div class="service-icon">🎨</div>
+<h3>رنگ و لایت</h3>
 <p>
 اجرای رنگ، لایت و تکنیک‌های زیبایی
 مو با توجه به رنگ پوست، فرم چهره
 و سلیقه شخصی شما.
 </p>
-
 </div>
 
-
-<!-- 03 -->
 
 <div class="service">
-
-<div class="service-icon">
-    ✨
-</div>
-
-<h3>
-    کراتین و احیای مو
-</h3>
-
+<div class="service-icon">✨</div>
+<h3>کراتین و احیای مو</h3>
 <p>
 خدمات مراقبت و احیای مو با هدف
 داشتن موهایی مرتب‌تر، نرم‌تر
 و خوش‌حالت‌تر.
 </p>
-
 </div>
 
-
-<!-- 04 -->
 
 <div class="service">
-
-<div class="service-icon">
-    👁️
-</div>
-
-<h3>
-    مژه
-</h3>
-
+<div class="service-icon">👁️</div>
+<h3>مژه</h3>
 <p>
 خدمات زیبایی مژه با توجه به فرم چشم
 و نتیجه‌ای که برای ظاهر طبیعی
 یا جذاب‌تر خود می‌خواهید.
 </p>
-
 </div>
 
-
-<!-- 05 -->
 
 <div class="service">
-
-<div class="service-icon">
-    🧖🏻‍♀️
-</div>
-
-<h3>
-    فیشیال
-</h3>
-
+<div class="service-icon">🧖🏻‍♀️</div>
+<h3>فیشیال</h3>
 <p>
-خدمات مراقبت و پاکسازی پوست برای
-کمک به داشتن پوستی تمیزتر،
+خدمات مراقبت و پاکسازی پوست
+برای کمک به داشتن پوستی تمیزتر،
 شاداب‌تر و باطراوت‌تر.
 </p>
-
 </div>
 
-
-<!-- 06 -->
 
 <div class="service">
-
-<div class="service-icon">
-    🌸
-</div>
-
-<h3>
-    لیفت صورت
-</h3>
-
+<div class="service-icon">🌸</div>
+<h3>لیفت صورت</h3>
 <p>
 خدمات زیبایی و مراقبتی صورت
 برای داشتن ظاهری مرتب‌تر،
 شاداب‌تر و جذاب‌تر.
 </p>
-
 </div>
 
-
-<!-- 07 -->
 
 <div class="service">
-
-<div class="service-icon">
-    🖊️
-</div>
-
-<h3>
-    میکروبلیدینگ
-</h3>
-
+<div class="service-icon">🖊️</div>
+<h3>میکروبلیدینگ</h3>
 <p>
 فرم‌دهی و زیباسازی ابرو با توجه
 به فرم صورت و انتخاب مدل مناسب
 برای چهره شما.
 </p>
-
 </div>
 
-
-<!-- 08 -->
 
 <div class="service">
-
-<div class="service-icon">
-    💋
-</div>
-
-<h3>
-    شیدینگ لب
-</h3>
-
+<div class="service-icon">💋</div>
+<h3>شیدینگ لب</h3>
 <p>
 خدمات زیبایی لب با هدف ایجاد
 ظاهر مرتب‌تر و هماهنگ‌تر
 با فرم و سلیقه شما.
 </p>
-
 </div>
 
-
-<!-- 09 -->
 
 <div class="service">
-
-<div class="service-icon">
-    🌷
-</div>
-
-<h3>
-    اصلاح و ابرو
-</h3>
-
+<div class="service-icon">🌷</div>
+<h3>اصلاح و ابرو</h3>
 <p>
 اصلاح و فرم‌دهی ابرو با توجه
 به فرم صورت برای ایجاد ظاهری
 مرتب و هماهنگ.
 </p>
-
 </div>
 
-
-<!-- 10 -->
 
 <div class="service">
-
-<div class="service-icon">
-    💄
-</div>
-
-<h3>
-    میکاپ
-</h3>
-
+<div class="service-icon">💄</div>
+<h3>میکاپ</h3>
 <p>
 میکاپ متناسب با چهره، سلیقه
 و مناسبت شما؛ از سبک‌های ظریف
 و طبیعی تا میکاپ‌های مجلسی.
 </p>
-
 </div>
 
-
-<!-- 11 -->
 
 <div class="service">
-
-<div class="service-icon">
-    👱🏻‍♀️
-</div>
-
-<h3>
-    شینیون
-</h3>
-
+<div class="service-icon">👱🏻‍♀️</div>
+<h3>شینیون</h3>
 <p>
 انواع شینیون و مدل‌دهی مو برای
 مهمانی‌ها و مراسم، متناسب با
 مدل لباس و فرم چهره.
 </p>
-
 </div>
 
-
-<!-- 12 -->
 
 <div class="service">
-
-<div class="service-icon">
-    👰🏻
-</div>
-
-<h3>
-    تمام خدمات VIP عروس
-</h3>
-
+<div class="service-icon">👰🏻</div>
+<h3>تمام خدمات VIP عروس</h3>
 <p>
 مجموعه خدمات زیبایی عروس برای
 آماده‌سازی کامل شما برای روز خاص؛
 با هماهنگی و برنامه‌ریزی اختصاصی.
 </p>
-
 </div>
 
-
-<!-- 13 -->
 
 <div class="service">
-
-<div class="service-icon">
-    🪮
-</div>
-
-<h3>
-    بافت مو
-</h3>
-
+<div class="service-icon">🪮</div>
+<h3>بافت مو</h3>
 <p>
 انواع بافت مو با مدل‌های متنوع
 و زیبا برای استایل‌های روزمره،
 مجلسی و خاص.
 </p>
-
 </div>
 
-
-<!-- 14 -->
 
 <div class="service">
-
-<div class="service-icon">
-    ✨
-</div>
-
-<h3>
-    اکستنشن مو
-</h3>
-
+<div class="service-icon">✨</div>
+<h3>اکستنشن مو</h3>
 <p>
 خدمات اکستنشن مو برای ایجاد
 تغییر در طول و حجم مو با انتخاب
 روش مناسب برای شما.
 </p>
-
 </div>
 
-
-<!-- 15 -->
 
 <div class="service">
-
-<div class="service-icon">
-    🦶
-</div>
-
-<h3>
-    پدیکور پا
-</h3>
-
+<div class="service-icon">🦶</div>
+<h3>پدیکور پا</h3>
 <p>
 مراقبت و زیبایی پا و ناخن‌های پا
 برای داشتن ظاهری مرتب و تجربه‌ای
 آرامش‌بخش.
 </p>
+</div>
 
+
+<!-- NEW -->
+
+<div class="service">
+<div class="service-icon">🌿</div>
+<h3>اپیلاسیون بدن</h3>
+<p>
+خدمات اپیلاسیون بدن با رعایت
+نظافت و دقت، برای داشتن پوستی
+مرتب و صاف‌تر.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-icon">🖋️</div>
+<h3>تتو بدن</h3>
+<p>
+اجرای طرح‌های تتو بدن با توجه
+به طرح و سلیقه شما. قبل از انجام
+خدمت، طرح و جزئیات آن هماهنگ می‌شود.
+</p>
 </div>
 
 
@@ -1732,7 +1426,7 @@ class="btn btn-light">
 <span>WHY SARA BEAUTY?</span>
 
 <h2>
-    چرا سالن زیبایی سارا شاه حسینی؟
+چرا سالن زیبایی سارا شاه حسینی؟
 </h2>
 
 </div>
@@ -1758,12 +1452,10 @@ class="btn btn-light">
 
 <div class="why-card">
 
-<div class="why-number">
-    01
-</div>
+<div class="why-number">01</div>
 
 <h3>
-    زیبایی با دقت و ظرافت
+زیبایی با دقت و ظرافت
 </h3>
 
 <p>
@@ -1777,18 +1469,16 @@ class="btn btn-light">
 
 <div class="why-card">
 
-<div class="why-number">
-    02
-</div>
+<div class="why-number">02</div>
 
 <h3>
-    توجه به سلیقه شما
+توجه به سلیقه شما
 </h3>
 
 <p>
 هر فرد سبک و سلیقه مخصوص خودش را دارد.
-به همین دلیل قبل از انجام خدمات، انتخاب
-و خواسته شما اهمیت زیادی دارد.
+به همین دلیل انتخاب و خواسته شما
+اهمیت زیادی دارد.
 </p>
 
 </div>
@@ -1796,18 +1486,16 @@ class="btn btn-light">
 
 <div class="why-card">
 
-<div class="why-number">
-    03
-</div>
+<div class="why-number">03</div>
 
 <h3>
-    خدمات متنوع
+خدمات متنوع
 </h3>
 
 <p>
 از مو و ناخن گرفته تا میکاپ، شینیون،
-خدمات عروس، مژه، پوست، ابرو و
-خدمات زیبایی صورت؛ همه در یک مجموعه.
+خدمات عروس، مژه، پوست، ابرو،
+اپیلاسیون و تتو بدن.
 </p>
 
 </div>
@@ -1815,12 +1503,10 @@ class="btn btn-light">
 
 <div class="why-card">
 
-<div class="why-number">
-    04
-</div>
+<div class="why-number">04</div>
 
 <h3>
-    تجربه‌ای آرام و دلنشین
+تجربه‌ای آرام و دلنشین
 </h3>
 
 <p>
@@ -1847,6 +1533,58 @@ class="btn btn-light">
 </section>
 
 
+<!-- DISCOUNT -->
+
+<section class="discount" id="discount">
+
+<div class="container">
+
+<div class="discount-box">
+
+<div class="discount-badge">
+🎁 پیشنهاد ویژه
+</div>
+
+<h2>
+۱۰٪ تخفیف ویژه
+</h2>
+
+<p>
+با استفاده از کد تخفیف زیر،
+هنگام رزرو نوبت از ۱۰٪ تخفیف
+برخوردار شوید.
+</p>
+
+<div class="discount-code">
+SARA10
+</div>
+
+<p>
+این کد برای رزروهای حضوری و آنلاین
+قابل استفاده است.
+</p>
+
+<button
+class="copy-code"
+onclick="copyDiscount()">
+
+📋 کپی کد تخفیف
+
+</button>
+
+<div
+class="copy-message"
+id="copyMessage">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
 <!-- RESERVATION -->
 
 <section class="reservation" id="reservation">
@@ -1858,16 +1596,21 @@ class="btn btn-light">
 <div class="reservation-content">
 
 <span>
-    RESERVATION
+RESERVATION
 </span>
 
 <h2>
-    برای رزرو نوبت
+برای رزرو نوبت
 </h2>
 
 <p>
 برای دریافت نوبت و هماهنگی زمان مراجعه،
 با شماره زیر تماس بگیرید.
+
+<br>
+
+اگر می‌خواهید از تخفیف استفاده کنید،
+هنگام رزرو کد <b>SARA10</b> را اعلام کنید.
 </p>
 
 <a
@@ -1906,11 +1649,11 @@ class="btn btn-primary">
 <div class="section-title">
 
 <span>
-    YOUR OPINION MATTERS
+YOUR OPINION MATTERS
 </span>
 
 <h2>
-    به سارا بیوتی امتیاز بدهید
+به سارا بیوتی امتیاز بدهید
 </h2>
 
 <p>
@@ -1935,11 +1678,11 @@ id="ratingNumber">
 <div>
 
 <div class="rating-stars">
-    ★★★★★
+★★★★★
 </div>
 
 <div class="rating-text">
-    امتیاز شما
+امتیاز شما
 </div>
 
 </div>
@@ -1954,25 +1697,11 @@ id="ratingNumber">
 
 <div class="star-buttons">
 
-<button class="star" data-value="1">
-    ★
-</button>
-
-<button class="star" data-value="2">
-    ★
-</button>
-
-<button class="star" data-value="3">
-    ★
-</button>
-
-<button class="star" data-value="4">
-    ★
-</button>
-
-<button class="star" data-value="5">
-    ★
-</button>
+<button class="star" data-value="1">★</button>
+<button class="star" data-value="2">★</button>
+<button class="star" data-value="3">★</button>
+<button class="star" data-value="4">★</button>
+<button class="star" data-value="5">★</button>
 
 </div>
 
@@ -2001,15 +1730,15 @@ id="ratingMessage">
 <div class="share-box">
 
 <div class="share-icon">
-    💌
+💌
 </div>
 
 <span class="hero-label">
-    SHARE SARA BEAUTY
+SHARE SARA BEAUTY
 </span>
 
 <h2>
-    سارا بیوتی را به دوستانتان معرفی کنید
+سارا بیوتی را به دوستانتان معرفی کنید
 </h2>
 
 <p>
@@ -2053,11 +1782,11 @@ id="shareStatus">
 <div class="section-title">
 
 <span>
-    CONTACT
+CONTACT
 </span>
 
 <h2>
-    آدرس و تماس
+آدرس و تماس
 </h2>
 
 </div>
@@ -2069,11 +1798,11 @@ id="shareStatus">
 <div class="address-card">
 
 <div class="address-icon">
-    📍
+📍
 </div>
 
 <h3>
-    آدرس دقیق
+آدرس دقیق
 </h3>
 
 <p>
@@ -2098,11 +1827,11 @@ class="map-button">
 <div class="address-card">
 
 <div class="address-icon">
-    📞
+📞
 </div>
 
 <h3>
-    شماره تماس
+شماره تماس
 </h3>
 
 <p>
@@ -2144,19 +1873,19 @@ direction:ltr;
 <div class="instagram-box">
 
 <div class="instagram-icon">
-    📸
+📸
 </div>
 
 <span class="hero-label">
-    INSTAGRAM
+INSTAGRAM
 </span>
 
 <h2>
-    پیج اینستاگرام
+پیج اینستاگرام
 </h2>
 
 <div class="instagram-name">
-    @sarabeauty.lounge
+@sarabeauty.lounge
 </div>
 
 <br>
@@ -2186,11 +1915,11 @@ class="btn btn-primary">
 <div class="section-title">
 
 <span>
-    SCAN
+SCAN
 </span>
 
 <h2>
-    کیوآر کد سایت
+کیوآر کد سایت
 </h2>
 
 <p>
@@ -2203,7 +1932,7 @@ class="btn btn-primary">
 <div class="qr-card">
 
 <h3>
-    Sara Beauty Lounge
+Sara Beauty Lounge
 </h3>
 
 <img
@@ -2212,7 +1941,7 @@ src="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=https%3A%2F%2
 alt="QR Code">
 
 <p>
-    اسکن کنید و وارد سایت شوید
+اسکن کنید و وارد سایت شوید
 </p>
 
 </div>
@@ -2231,11 +1960,11 @@ alt="QR Code">
 <div class="section-title">
 
 <span>
-    REVIEWS
+REVIEWS
 </span>
 
 <h2>
-    نظرات مشتریان
+نظرات مشتریان
 </h2>
 
 <p>
@@ -2251,7 +1980,7 @@ alt="QR Code">
 <div class="review">
 
 <div class="stars">
-    ★★★★★
+★★★★★
 </div>
 
 <p>
@@ -2269,7 +1998,7 @@ alt="QR Code">
 <div class="review">
 
 <div class="stars">
-    ★★★★★
+★★★★★
 </div>
 
 <p>
@@ -2287,7 +2016,7 @@ alt="QR Code">
 <div class="review">
 
 <div class="stars">
-    ★★★★★
+★★★★★
 </div>
 
 <p>
@@ -2319,16 +2048,16 @@ alt="QR Code">
 <div>
 
 <h3>
-    Sara Beauty Lounge
+Sara Beauty Lounge
 </h3>
 
 <p>
-    سالن زیبایی سارا شاه حسینی
-    در تهران.
+سالن زیبایی سارا شاه حسینی
+در تهران.
 </p>
 
 <p style="margin-top:10px;">
-    زیبایی، ظرافت و حس خوب.
+زیبایی، ظرافت و حس خوب.
 </p>
 
 </div>
@@ -2337,31 +2066,31 @@ alt="QR Code">
 <div>
 
 <h3>
-    دسترسی سریع
+دسترسی سریع
 </h3>
 
 <a href="#home">
-    صفحه اصلی
+صفحه اصلی
 </a>
 
 <a href="#services">
-    خدمات
+خدمات
 </a>
 
 <a href="#why">
-    چرا ما؟
+چرا ما؟
+</a>
+
+<a href="#discount">
+تخفیف ویژه
 </a>
 
 <a href="#rating">
-    امتیازدهی
-</a>
-
-<a href="#share">
-    معرفی به دوستان
+امتیازدهی
 </a>
 
 <a href="#address">
-    آدرس
+آدرس
 </a>
 
 </div>
@@ -2370,11 +2099,11 @@ alt="QR Code">
 <div>
 
 <h3>
-    ارتباط با ما
+ارتباط با ما
 </h3>
 
 <a href="tel:09355097780">
-    📞 ۰۹۳۵۵۰۹۷۷۸۰
+📞 ۰۹۳۵۵۰۹۷۷۸۰
 </a>
 
 <a
@@ -2409,245 +2138,259 @@ target="_blank">
 <script>
 
 
-/* =========================
-   START
-========================= */
+/* START */
 
 function startSite(){
 
-    document
-    .getElementById("welcome")
-    .classList.add("hide");
+document
+.getElementById("welcome")
+.classList.add("hide");
 
 }
 
 
-/* =========================
-   DATE
-========================= */
+/* DATE */
 
 function showDate(){
 
-    const today = new Date();
+const today = new Date();
 
-    const options = {
-        weekday:"long",
-        year:"numeric",
-        month:"long",
-        day:"numeric"
-    };
+const options = {
+weekday:"long",
+year:"numeric",
+month:"long",
+day:"numeric"
+};
 
-    document.getElementById("date").innerHTML =
-        "📅 " +
-        today.toLocaleDateString(
-            "fa-IR",
-            options
-        );
+document.getElementById("date").innerHTML =
+"📅 " +
+today.toLocaleDateString(
+"fa-IR",
+options
+);
 
 }
 
 showDate();
 
 
-/* =========================
-   DARK MODE
-========================= */
+/* DARK MODE */
 
 function toggleTheme(){
 
-    document.body.classList.toggle("dark");
+document.body.classList.toggle("dark");
 
-    const button =
-        document.getElementById("themeButton");
+const button =
+document.getElementById("themeButton");
 
-    const dark =
-        document.body.classList.contains("dark");
+const dark =
+document.body.classList.contains("dark");
 
-    if(dark){
+if(dark){
 
-        button.innerHTML="☀️";
+button.innerHTML="☀️";
 
-        localStorage.setItem(
-            "saraTheme",
-            "dark"
-        );
+localStorage.setItem(
+"saraTheme",
+"dark"
+);
 
-    }else{
+}else{
 
-        button.innerHTML="🌙";
+button.innerHTML="🌙";
 
-        localStorage.setItem(
-            "saraTheme",
-            "light"
-        );
+localStorage.setItem(
+"saraTheme",
+"light"
+);
 
-    }
+}
 
 }
 
 
-/* =========================
-   LOAD DARK MODE
-========================= */
+/* LOAD THEME */
 
 if(
-    localStorage.getItem("saraTheme")
-    === "dark"
+localStorage.getItem("saraTheme")
+===
+"dark"
 ){
 
-    document.body.classList.add("dark");
+document.body.classList.add("dark");
 
-    document.getElementById(
-        "themeButton"
-    ).innerHTML="☀️";
+document.getElementById(
+"themeButton"
+).innerHTML="☀️";
 
 }
 
 
-/* =========================
-   RATING
-========================= */
+/* DISCOUNT */
+
+function copyDiscount(){
+
+const code="SARA10";
+
+const message=
+document.getElementById("copyMessage");
+
+if(navigator.clipboard){
+
+navigator.clipboard.writeText(code);
+
+message.innerHTML=
+"✅ کد SARA10 کپی شد!";
+
+}else{
+
+message.innerHTML=
+"کد تخفیف: SARA10";
+
+}
+
+}
+
+
+/* RATING */
 
 const stars =
-    document.querySelectorAll(".star");
+document.querySelectorAll(".star");
 
 const ratingMessage =
-    document.getElementById("ratingMessage");
+document.getElementById("ratingMessage");
 
 const ratingNumber =
-    document.getElementById("ratingNumber");
+document.getElementById("ratingNumber");
 
 const savedRating =
-    localStorage.getItem("saraRating");
+localStorage.getItem("saraRating");
 
 
 function showRating(value){
 
-    stars.forEach(function(star){
+stars.forEach(function(star){
 
-        const starValue =
-            Number(star.dataset.value);
+const starValue =
+Number(star.dataset.value);
 
-        if(starValue <= value){
+if(starValue <= value){
 
-            star.classList.add("selected");
+star.classList.add("selected");
 
-        }else{
+}else{
 
-            star.classList.remove("selected");
+star.classList.remove("selected");
 
-        }
+}
 
-    });
+});
 
 }
 
 
 if(savedRating){
 
-    showRating(
-        Number(savedRating)
-    );
+showRating(
+Number(savedRating)
+);
 
-    ratingNumber.innerHTML =
-        Number(savedRating).toFixed(1);
+ratingNumber.innerHTML =
+Number(savedRating).toFixed(1);
 
-    ratingMessage.innerHTML =
-        "⭐ امتیاز شما ثبت شده است. ممنون از همراهی شما!";
+ratingMessage.innerHTML =
+"⭐ امتیاز شما ثبت شده است. ممنون از همراهی شما!";
 
 }
 
 
 stars.forEach(function(star){
 
-    star.addEventListener(
-        "click",
-        function(){
+star.addEventListener(
+"click",
+function(){
 
-            const value =
-                Number(this.dataset.value);
+const value =
+Number(this.dataset.value);
 
-            localStorage.setItem(
-                "saraRating",
-                value
-            );
+localStorage.setItem(
+"saraRating",
+value
+);
 
-            showRating(value);
+showRating(value);
 
-            ratingNumber.innerHTML =
-                value.toFixed(1);
+ratingNumber.innerHTML =
+value.toFixed(1);
 
-            ratingMessage.innerHTML =
-                "⭐ امتیاز شما با موفقیت ثبت شد. ممنونیم!";
+ratingMessage.innerHTML =
+"⭐ امتیاز شما با موفقیت ثبت شد. ممنونیم!";
 
-        }
-    );
+}
+);
 
 });
 
 
-/* =========================
-   SHARE
-========================= */
+/* SHARE */
 
 async function shareSite(){
 
-    const shareData = {
+const shareData={
 
-        title:
-        "SARA BEAUTY | سالن زیبایی سارا شاه حسینی",
+title:
+"SARA BEAUTY | سالن زیبایی سارا شاه حسینی",
 
-        text:
-        "سالن زیبایی سارا شاه حسینی در تهران؛ خدمات زیبایی، مو، ناخن، مژه، میکاپ و عروس.",
+text:
+"سالن زیبایی سارا شاه حسینی در تهران؛ خدمات زیبایی، مو، ناخن، مژه، میکاپ و عروس.",
 
-        url:
-        window.location.href
+url:
+window.location.href
 
-    };
+};
+
+const status =
+document.getElementById(
+"shareStatus"
+);
 
 
-    const status =
-        document.getElementById(
-            "shareStatus"
-        );
+if(navigator.share){
 
+try{
 
-    if(navigator.share){
+await navigator.share(
+shareData
+);
 
-        try{
+status.innerHTML =
+"💗 ممنون که سارا بیوتی را معرفی کردید!";
 
-            await navigator.share(
-                shareData
-            );
+}catch(error){
 
-            status.innerHTML =
-                "💗 ممنون که سارا بیوتی را معرفی کردید!";
+status.innerHTML="";
 
-        }catch(error){
+}
 
-            status.innerHTML="";
+}else{
 
-        }
+try{
 
-    }else{
+await navigator.clipboard.writeText(
+window.location.href
+);
 
-        try{
+status.innerHTML =
+"🔗 لینک سایت کپی شد؛ حالا می‌توانید آن را برای دوستانتان ارسال کنید.";
 
-            await navigator.clipboard.writeText(
-                window.location.href
-            );
+}catch(error){
 
-            status.innerHTML =
-                "🔗 لینک سایت کپی شد؛ حالا می‌توانید آن را برای دوستانتان ارسال کنید.";
+status.innerHTML =
+"لینک سایت را از نوار آدرس کپی کنید.";
 
-        }catch(error){
+}
 
-            status.innerHTML =
-                "لینک سایت را از نوار آدرس کپی کنید.";
-
-        }
-
-    }
+}
 
 }
 
