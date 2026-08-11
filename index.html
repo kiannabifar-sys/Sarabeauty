@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,14 +11,14 @@
 :root{
     --bg:#faf7f8;
     --card:#ffffff;
-    --text:#342f33;
-    --muted:#756e73;
-    --pink:#c45d85;
-    --pink2:#df7fa4;
-    --soft:#fae8ef;
-    --border:#eadde4;
-    --dark:#302b30;
-    --shadow:rgba(70,45,60,.10);
+    --text:#332e32;
+    --muted:#756d73;
+    --pink:#c85f87;
+    --pink2:#df82a5;
+    --soft:#fae7ee;
+    --border:#eadce3;
+    --dark:#29252a;
+    --shadow:rgba(70,45,60,.12);
 }
 
 body.dark{
@@ -31,8 +30,8 @@ body.dark{
     --pink2:#ed91b4;
     --soft:#382630;
     --border:#443840;
-    --dark:#0c0b0d;
-    --shadow:rgba(0,0,0,.35);
+    --dark:#0d0c0e;
+    --shadow:rgba(0,0,0,.4);
 }
 
 *{
@@ -43,7 +42,7 @@ body.dark{
 }
 
 html{
-    scroll-padding-top:85px;
+    scroll-padding-top:90px;
 }
 
 body{
@@ -74,18 +73,19 @@ button{
     z-index:99999;
 
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
 
-    text-align:center;
     padding:25px;
-
-    background:
-    radial-gradient(circle at 20% 20%,rgba(225,130,165,.25),transparent 30%),
-    radial-gradient(circle at 80% 80%,rgba(220,170,190,.18),transparent 30%),
-    linear-gradient(135deg,#302b30,#59434e);
+    text-align:center;
 
     color:white;
+
+    background:
+    radial-gradient(circle at 15% 20%,rgba(225,130,165,.3),transparent 30%),
+    radial-gradient(circle at 85% 80%,rgba(220,170,190,.2),transparent 30%),
+    linear-gradient(135deg,#302b30,#59434e);
+
     transition:.7s;
 }
 
@@ -95,7 +95,7 @@ button{
 }
 
 .welcome-box{
-    max-width:720px;
+    max-width:750px;
     animation:welcomeIn 1s ease;
 }
 
@@ -104,6 +104,7 @@ button{
         opacity:0;
         transform:translateY(35px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
@@ -111,9 +112,10 @@ button{
 }
 
 .welcome-logo{
-    width:95px;
-    height:95px;
-    margin:0 auto 22px;
+    width:100px;
+    height:100px;
+
+    margin:0 auto 20px;
 
     display:flex;
     align-items:center;
@@ -121,10 +123,10 @@ button{
 
     border-radius:50%;
 
-    font-size:42px;
+    font-size:43px;
     font-weight:bold;
 
-    background:linear-gradient(135deg,#e58cab,#aa5278);
+    background:linear-gradient(135deg,#e58cab,#a94f75);
 
     box-shadow:0 20px 50px rgba(0,0,0,.3);
 }
@@ -150,7 +152,7 @@ button{
     display:inline-block;
 
     margin-top:30px;
-    padding:14px 34px;
+    padding:14px 35px;
 
     border-radius:16px;
 
@@ -177,16 +179,18 @@ button{
 
 .date-box{
     position:fixed;
-    top:91px;
-    left:18px;
 
-    z-index:800;
+    top:90px;
+    left:17px;
 
-    padding:7px 13px;
+    z-index:900;
+
+    padding:6px 12px;
 
     border-radius:12px;
 
     background:var(--card);
+
     border:1px solid var(--border);
 
     color:var(--pink);
@@ -203,6 +207,7 @@ button{
 
 header{
     position:fixed;
+
     top:0;
     right:0;
     left:0;
@@ -233,8 +238,8 @@ header{
     align-items:center;
     gap:10px;
 
+    font-size:14px;
     font-weight:bold;
-    font-size:15px;
 }
 
 .logo-icon{
@@ -249,14 +254,12 @@ header{
 
     color:white;
 
-    font-size:20px;
-
     background:linear-gradient(135deg,var(--pink2),#a94f75);
 }
 
 nav{
     display:flex;
-    gap:19px;
+    gap:18px;
 }
 
 nav a{
@@ -270,12 +273,13 @@ nav a:hover{
 }
 
 .nav-call{
-    background:var(--pink);
-    color:white!important;
-
     padding:7px 15px;
 
     border-radius:11px;
+
+    background:var(--pink);
+
+    color:white!important;
 
     font-size:11px;
 }
@@ -289,6 +293,7 @@ nav a:hover{
     border:1px solid var(--border);
 
     background:var(--card);
+
     color:var(--text);
 
     cursor:pointer;
@@ -324,8 +329,8 @@ nav a:hover{
 }
 
 .hero-container{
-    max-width:1000px;
     width:100%;
+    max-width:1000px;
     margin:auto;
 }
 
@@ -346,7 +351,8 @@ nav a:hover{
 }
 
 .hero-description{
-    max-width:760px;
+    max-width:790px;
+
     margin:auto;
 
     color:var(--muted);
@@ -361,6 +367,7 @@ nav a:hover{
     justify-content:center;
 
     gap:12px;
+
     flex-wrap:wrap;
 }
 
@@ -447,7 +454,9 @@ section{
 
 .services-grid{
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:18px;
 }
 
@@ -523,7 +532,9 @@ section{
 
 .why-grid{
     display:grid;
+
     grid-template-columns:repeat(2,1fr);
+
     gap:20px;
 }
 
@@ -541,6 +552,7 @@ section{
 
 .why-card:hover{
     transform:translateY(-6px);
+
     box-shadow:0 20px 45px var(--shadow);
 }
 
@@ -575,15 +587,15 @@ section{
 }
 
 .why-final{
-    margin:40px auto 0;
-
     max-width:750px;
 
-    text-align:center;
+    margin:40px auto 0;
 
     padding:25px;
 
     border-radius:22px;
+
+    text-align:center;
 
     background:linear-gradient(135deg,#39333a,#55404b);
 
@@ -603,15 +615,15 @@ section{
 }
 
 .reservation-box{
-    background:linear-gradient(135deg,#39343a,#57414d);
+    padding:58px 25px;
 
     border-radius:32px;
 
-    padding:58px 25px;
+    text-align:center;
 
     color:white;
 
-    text-align:center;
+    background:linear-gradient(135deg,#39343a,#57414d);
 
     box-shadow:0 20px 50px var(--shadow);
 }
@@ -635,12 +647,12 @@ section{
 
     direction:ltr;
 
+    margin:12px 0 20px;
+
     color:#f1a9c1;
 
     font-size:26px;
     font-weight:bold;
-
-    margin:12px 0 20px;
 }
 
 
@@ -654,14 +666,16 @@ section{
 
 .address-grid{
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:20px;
 }
 
 .address-card{
-    background:var(--card);
-
     padding:35px;
+
+    background:var(--card);
 
     border-radius:25px;
 
@@ -672,6 +686,7 @@ section{
 
 .address-card:hover{
     transform:translateY(-5px);
+
     box-shadow:0 15px 35px var(--shadow);
 }
 
@@ -711,6 +726,7 @@ section{
 
 .instagram{
     background:var(--card);
+
     text-align:center;
 }
 
@@ -780,8 +796,10 @@ section{
 
 .rating-main{
     display:flex;
+
     justify-content:center;
     align-items:center;
+
     gap:15px;
 
     margin-bottom:20px;
@@ -789,14 +807,19 @@ section{
 
 .rating-number{
     font-size:48px;
+
     font-weight:bold;
+
     color:var(--pink);
 }
 
 .rating-stars{
     direction:ltr;
+
     color:#e0a02d;
+
     font-size:25px;
+
     letter-spacing:3px;
 }
 
@@ -809,6 +832,7 @@ section{
     direction:ltr;
 
     display:flex;
+
     justify-content:center;
 
     gap:7px;
@@ -818,6 +842,7 @@ section{
 
 .star{
     border:none;
+
     background:transparent;
 
     font-size:34px;
@@ -832,6 +857,7 @@ section{
 .star:hover,
 .star.selected{
     color:#e0a02d;
+
     transform:scale(1.15);
 }
 
@@ -874,16 +900,17 @@ section{
 
 .share-icon{
     font-size:48px;
-    margin-bottom:10px;
 }
 
 .share-box h2{
     font-size:32px;
+
     margin-bottom:10px;
 }
 
 .share-box p{
     max-width:650px;
+
     margin:auto;
 
     color:var(--muted);
@@ -905,6 +932,7 @@ section{
     background:linear-gradient(135deg,var(--pink2),#a84e74);
 
     font-size:12px;
+
     font-weight:bold;
 
     cursor:pointer;
@@ -935,6 +963,7 @@ section{
 
 .qr{
     background:var(--bg);
+
     text-align:center;
 }
 
@@ -979,7 +1008,9 @@ section{
 
 .reviews-grid{
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:18px;
 }
 
@@ -995,17 +1026,21 @@ section{
 
 .stars{
     color:#e0a02d;
+
     letter-spacing:2px;
 }
 
 .review p{
     color:var(--muted);
+
     font-size:12px;
 }
 
 .review strong{
     display:block;
+
     margin-top:15px;
+
     font-size:12px;
 }
 
@@ -1015,18 +1050,20 @@ section{
 ========================= */
 
 footer{
+    padding:55px 20px 25px;
+
     background:var(--dark);
 
     color:white;
-
-    padding:55px 20px 25px;
 }
 
 .footer-grid{
     max-width:1100px;
+
     margin:auto;
 
     display:grid;
+
     grid-template-columns:1.5fr 1fr 1fr;
 
     gap:35px;
@@ -1039,11 +1076,13 @@ footer h3{
 footer p,
 footer a{
     color:#bcb4b9;
+
     font-size:12px;
 }
 
 footer a{
     display:block;
+
     margin-bottom:7px;
 }
 
@@ -1061,6 +1100,32 @@ footer a{
     color:#969095;
 
     font-size:10px;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+.service,
+.why-card,
+.review,
+.address-card{
+    animation:fadeUp .7s ease both;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(18px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
 }
 
 
@@ -1092,6 +1157,7 @@ footer a{
 
     .footer-grid{
         grid-template-columns:1fr;
+
         text-align:center;
     }
 }
@@ -1117,6 +1183,7 @@ footer a{
     .date-box{
         top:83px;
         left:8px;
+
         font-size:8px;
     }
 
@@ -1130,32 +1197,6 @@ footer a{
 
     .share-box h2{
         font-size:27px;
-    }
-
-}
-
-
-/* =========================
-   ANIMATION
-========================= */
-
-.service,
-.why-card,
-.review,
-.address-card{
-    animation:fadeUp .7s ease both;
-}
-
-@keyframes fadeUp{
-
-    from{
-        opacity:0;
-        transform:translateY(18px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
     }
 
 }
@@ -1189,8 +1230,8 @@ footer a{
 
         <p>
             زیبایی، ظرافت و حس خوب؛
-            اینجا جایی است که برای زیبایی و آرامش
-            شما اهمیت ویژه‌ای قائل هستیم.
+            اینجا جایی است که برای زیبایی
+            و آرامش شما اهمیت ویژه‌ای قائل هستیم.
         </p>
 
         <div
@@ -1235,11 +1276,17 @@ footer a{
 <nav>
 
 <a href="#home">صفحه اصلی</a>
+
 <a href="#services">خدمات</a>
+
 <a href="#why">چرا ما؟</a>
+
 <a href="#reservation">رزرو</a>
+
 <a href="#rating">امتیاز</a>
+
 <a href="#share">معرفی</a>
+
 <a href="#address">آدرس</a>
 
 </nav>
@@ -1282,9 +1329,12 @@ footer a{
 </span>
 
 <h1>
+
     زیبایی تو،
     <br>
+
     <span>سبک توست.</span>
+
 </h1>
 
 <p class="hero-description">
@@ -1294,10 +1344,11 @@ footer a{
 متنوع زیبایی و مراقبتی، تجربه‌ای آرام،
 حرفه‌ای و دلنشین برای شما ایجاد کنیم.
 
-از خدمات تخصصی مو و ناخن گرفته تا مژه،
-فیشیال، لیفت صورت، میکروبلیدینگ و شیدینگ لب؛
-هدف ما این است که با توجه به سلیقه و نیاز شما،
-تجربه‌ای زیبا و رضایت‌بخش داشته باشید.
+از خدمات تخصصی مو و ناخن گرفته تا میکاپ،
+شینیون، خدمات VIP عروس، مژه، فیشیال،
+لیفت صورت، میکروبلیدینگ و شیدینگ لب؛
+هدف ما این است که هر مراجعه برای شما
+تجربه‌ای زیبا و رضایت‌بخش باشد.
 
 </p>
 
@@ -1308,8 +1359,12 @@ footer a{
     شروع بازدید ←
 </a>
 
-<a href="tel:09355097780" class="btn btn-light">
+<a
+href="tel:09355097780"
+class="btn btn-light">
+
     📞 تماس برای رزرو
+
 </a>
 
 </div>
@@ -1329,11 +1384,13 @@ footer a{
 
 <span>OUR SERVICES</span>
 
-<h2>خدمات سالن</h2>
+<h2>
+    خدمات سالن
+</h2>
 
 <p>
-مجموعه‌ای از خدمات زیبایی و مراقبتی
-برای داشتن ظاهری زیبا و حس بهتر
+مجموعه‌ای کامل از خدمات زیبایی،
+مو، ناخن، پوست و عروس
 </p>
 
 </div>
@@ -1342,93 +1399,318 @@ footer a{
 <div class="services-grid">
 
 
+<!-- 01 -->
+
 <div class="service">
-<div class="service-icon">💅</div>
-<h3>ناخن</h3>
+
+<div class="service-icon">
+    💅
+</div>
+
+<h3>
+    ناخن
+</h3>
+
 <p>
-خدمات زیبایی ناخن با توجه به سلیقه
-و انتخاب شما.
+خدمات زیبایی و مراقبت از ناخن
+با توجه به فرم دست و سلیقه شما،
+برای داشتن ظاهری مرتب و زیبا.
 </p>
+
 </div>
 
 
+<!-- 02 -->
+
 <div class="service">
-<div class="service-icon">🎨</div>
-<h3>رنگ و لایت</h3>
+
+<div class="service-icon">
+    🎨
+</div>
+
+<h3>
+    رنگ و لایت
+</h3>
+
 <p>
-اجرای خدمات رنگ و لایت متناسب
-با سلیقه و انتخاب شما.
+اجرای رنگ، لایت و تکنیک‌های زیبایی
+مو با توجه به رنگ پوست، فرم چهره
+و سلیقه شخصی شما.
 </p>
+
 </div>
 
 
+<!-- 03 -->
+
 <div class="service">
-<div class="service-icon">✨</div>
-<h3>کراتین و احیای مو</h3>
+
+<div class="service-icon">
+    ✨
+</div>
+
+<h3>
+    کراتین و احیای مو
+</h3>
+
 <p>
-خدمات مراقبت و احیای مو برای
-موهایی مرتب‌تر و زیباتر.
+خدمات مراقبت و احیای مو با هدف
+داشتن موهایی مرتب‌تر، نرم‌تر
+و خوش‌حالت‌تر.
 </p>
+
 </div>
 
 
+<!-- 04 -->
+
 <div class="service">
-<div class="service-icon">👁️</div>
-<h3>مژه</h3>
+
+<div class="service-icon">
+    👁️
+</div>
+
+<h3>
+    مژه
+</h3>
+
 <p>
-خدمات زیبایی مژه متناسب با فرم
-چشم و سلیقه شما.
+خدمات زیبایی مژه با توجه به فرم چشم
+و نتیجه‌ای که برای ظاهر طبیعی
+یا جذاب‌تر خود می‌خواهید.
 </p>
+
 </div>
 
 
+<!-- 05 -->
+
 <div class="service">
-<div class="service-icon">🧖🏻‍♀️</div>
-<h3>فیشیال</h3>
+
+<div class="service-icon">
+    🧖🏻‍♀️
+</div>
+
+<h3>
+    فیشیال
+</h3>
+
 <p>
-خدمات پاکسازی و مراقبت از پوست
-برای ظاهری شاداب‌تر.
+خدمات مراقبت و پاکسازی پوست برای
+کمک به داشتن پوستی تمیزتر،
+شاداب‌تر و باطراوت‌تر.
 </p>
+
 </div>
 
 
+<!-- 06 -->
+
 <div class="service">
-<div class="service-icon">🌸</div>
-<h3>لیفت صورت</h3>
+
+<div class="service-icon">
+    🌸
+</div>
+
+<h3>
+    لیفت صورت
+</h3>
+
 <p>
-خدمات زیبایی صورت برای ظاهری
-مرتب و شاداب.
+خدمات زیبایی و مراقبتی صورت
+برای داشتن ظاهری مرتب‌تر،
+شاداب‌تر و جذاب‌تر.
 </p>
+
 </div>
 
 
+<!-- 07 -->
+
 <div class="service">
-<div class="service-icon">🖊️</div>
-<h3>میکروبلیدینگ</h3>
+
+<div class="service-icon">
+    🖊️
+</div>
+
+<h3>
+    میکروبلیدینگ
+</h3>
+
 <p>
 فرم‌دهی و زیباسازی ابرو با توجه
-به فرم چهره.
+به فرم صورت و انتخاب مدل مناسب
+برای چهره شما.
 </p>
+
 </div>
 
 
+<!-- 08 -->
+
 <div class="service">
-<div class="service-icon">💋</div>
-<h3>شیدینگ لب</h3>
+
+<div class="service-icon">
+    💋
+</div>
+
+<h3>
+    شیدینگ لب
+</h3>
+
 <p>
-خدمات زیبایی لب متناسب با
-سلیقه شما.
+خدمات زیبایی لب با هدف ایجاد
+ظاهر مرتب‌تر و هماهنگ‌تر
+با فرم و سلیقه شما.
 </p>
+
 </div>
 
 
+<!-- 09 -->
+
 <div class="service">
-<div class="service-icon">🌷</div>
-<h3>اصلاح و ابرو</h3>
+
+<div class="service-icon">
+    🌷
+</div>
+
+<h3>
+    اصلاح و ابرو
+</h3>
+
 <p>
 اصلاح و فرم‌دهی ابرو با توجه
-به فرم صورت.
+به فرم صورت برای ایجاد ظاهری
+مرتب و هماهنگ.
 </p>
+
+</div>
+
+
+<!-- 10 -->
+
+<div class="service">
+
+<div class="service-icon">
+    💄
+</div>
+
+<h3>
+    میکاپ
+</h3>
+
+<p>
+میکاپ متناسب با چهره، سلیقه
+و مناسبت شما؛ از سبک‌های ظریف
+و طبیعی تا میکاپ‌های مجلسی.
+</p>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="service">
+
+<div class="service-icon">
+    👱🏻‍♀️
+</div>
+
+<h3>
+    شینیون
+</h3>
+
+<p>
+انواع شینیون و مدل‌دهی مو برای
+مهمانی‌ها و مراسم، متناسب با
+مدل لباس و فرم چهره.
+</p>
+
+</div>
+
+
+<!-- 12 -->
+
+<div class="service">
+
+<div class="service-icon">
+    👰🏻
+</div>
+
+<h3>
+    تمام خدمات VIP عروس
+</h3>
+
+<p>
+مجموعه خدمات زیبایی عروس برای
+آماده‌سازی کامل شما برای روز خاص؛
+با هماهنگی و برنامه‌ریزی اختصاصی.
+</p>
+
+</div>
+
+
+<!-- 13 -->
+
+<div class="service">
+
+<div class="service-icon">
+    🪮
+</div>
+
+<h3>
+    بافت مو
+</h3>
+
+<p>
+انواع بافت مو با مدل‌های متنوع
+و زیبا برای استایل‌های روزمره،
+مجلسی و خاص.
+</p>
+
+</div>
+
+
+<!-- 14 -->
+
+<div class="service">
+
+<div class="service-icon">
+    ✨
+</div>
+
+<h3>
+    اکستنشن مو
+</h3>
+
+<p>
+خدمات اکستنشن مو برای ایجاد
+تغییر در طول و حجم مو با انتخاب
+روش مناسب برای شما.
+</p>
+
+</div>
+
+
+<!-- 15 -->
+
+<div class="service">
+
+<div class="service-icon">
+    🦶
+</div>
+
+<h3>
+    پدیکور پا
+</h3>
+
+<p>
+مراقبت و زیبایی پا و ناخن‌های پا
+برای داشتن ظاهری مرتب و تجربه‌ای
+آرامش‌بخش.
+</p>
+
 </div>
 
 
@@ -1458,14 +1740,15 @@ footer a{
 
 <div class="why-intro">
 
-انتخاب یک سالن زیبایی فقط به انتخاب یک خدمت
-خلاصه نمی‌شود. محیط، دقت، توجه به سلیقه،
-کیفیت کار و حسی که بعد از دریافت خدمات دارید،
-همه بخشی از تجربه شما هستند.
+انتخاب یک سالن زیبایی فقط به انتخاب
+یک خدمت خلاصه نمی‌شود. محیط، دقت،
+توجه به سلیقه، کیفیت اجرا و حسی که
+بعد از دریافت خدمات دارید، همگی بخشی
+از تجربه شما هستند.
 
 در سالن زیبایی سارا شاه حسینی تلاش می‌کنیم
-هر مراجعه برای شما تبدیل به یک تجربه دلنشین
-و به‌یادماندنی شود.
+هر مراجعه برای شما تبدیل به یک تجربه
+دلنشین و به‌یادماندنی شود.
 
 </div>
 
@@ -1475,14 +1758,18 @@ footer a{
 
 <div class="why-card">
 
-<div class="why-number">01</div>
+<div class="why-number">
+    01
+</div>
 
-<h3>زیبایی با دقت و ظرافت</h3>
+<h3>
+    زیبایی با دقت و ظرافت
+</h3>
 
 <p>
-توجه به جزئیات، ظرافت در اجرای خدمات
-و تلاش برای رسیدن به نتیجه‌ای هماهنگ
-با سلیقه شما از اصول مهم ماست.
+توجه به جزئیات و ظرافت در اجرای خدمات،
+از اصول مهم ماست. تلاش می‌کنیم نتیجه
+نهایی با خواسته و سلیقه شما هماهنگ باشد.
 </p>
 
 </div>
@@ -1490,15 +1777,18 @@ footer a{
 
 <div class="why-card">
 
-<div class="why-number">02</div>
+<div class="why-number">
+    02
+</div>
 
-<h3>توجه به سلیقه شما</h3>
+<h3>
+    توجه به سلیقه شما
+</h3>
 
 <p>
-هر فرد سلیقه مخصوص خودش را دارد.
-به همین دلیل تلاش می‌کنیم انتخاب‌ها
-و خواسته‌های شما را در اجرای خدمات
-در نظر بگیریم.
+هر فرد سبک و سلیقه مخصوص خودش را دارد.
+به همین دلیل قبل از انجام خدمات، انتخاب
+و خواسته شما اهمیت زیادی دارد.
 </p>
 
 </div>
@@ -1506,14 +1796,18 @@ footer a{
 
 <div class="why-card">
 
-<div class="why-number">03</div>
+<div class="why-number">
+    03
+</div>
 
-<h3>خدمات متنوع</h3>
+<h3>
+    خدمات متنوع
+</h3>
 
 <p>
-از مو و ناخن گرفته تا مژه، پوست،
-ابرو و خدمات زیبایی صورت؛
-خدمات متنوعی در یک مجموعه ارائه می‌شود.
+از مو و ناخن گرفته تا میکاپ، شینیون،
+خدمات عروس، مژه، پوست، ابرو و
+خدمات زیبایی صورت؛ همه در یک مجموعه.
 </p>
 
 </div>
@@ -1521,14 +1815,18 @@ footer a{
 
 <div class="why-card">
 
-<div class="why-number">04</div>
+<div class="why-number">
+    04
+</div>
 
-<h3>محیط آرام و دلنشین</h3>
+<h3>
+    تجربه‌ای آرام و دلنشین
+</h3>
 
 <p>
-تلاش می‌کنیم زمانی که برای خودتان
-اختصاص داده‌اید، در فضایی آرام و
-دلنشین سپری شود.
+زمانی که برای خودتان اختصاص داده‌اید
+ارزشمند است. تلاش می‌کنیم محیطی آرام
+و دلنشین برای شما فراهم کنیم.
 </p>
 
 </div>
@@ -1559,23 +1857,35 @@ footer a{
 
 <div class="reservation-content">
 
-<span>RESERVATION</span>
+<span>
+    RESERVATION
+</span>
 
-<h2>برای رزرو نوبت</h2>
+<h2>
+    برای رزرو نوبت
+</h2>
 
 <p>
 برای دریافت نوبت و هماهنگی زمان مراجعه،
 با شماره زیر تماس بگیرید.
 </p>
 
-<a href="tel:09355097780" class="phone">
-    ۰۹۳۵۵۰۹۷۷۸۰
+<a
+href="tel:09355097780"
+class="phone">
+
+۰۹۳۵۵۰۹۷۷۸۰
+
 </a>
 
 <br>
 
-<a href="tel:09355097780" class="btn btn-primary">
-    📞 تماس برای رزرو
+<a
+href="tel:09355097780"
+class="btn btn-primary">
+
+📞 تماس برای رزرو
+
 </a>
 
 </div>
@@ -1595,9 +1905,13 @@ footer a{
 
 <div class="section-title">
 
-<span>YOUR OPINION MATTERS</span>
+<span>
+    YOUR OPINION MATTERS
+</span>
 
-<h2>به سارا بیوتی امتیاز بدهید</h2>
+<h2>
+    به سارا بیوتی امتیاز بدهید
+</h2>
 
 <p>
 تجربه خودتان را با ما به اشتراک بگذارید.
@@ -1610,8 +1924,12 @@ footer a{
 
 <div class="rating-main">
 
-<div class="rating-number" id="ratingNumber">
-    ۵.۰
+<div
+class="rating-number"
+id="ratingNumber">
+
+۵.۰
+
 </div>
 
 <div>
@@ -1621,7 +1939,7 @@ footer a{
 </div>
 
 <div class="rating-text">
-    امتیاز نمایش داده‌شده
+    امتیاز شما
 </div>
 
 </div>
@@ -1636,17 +1954,35 @@ footer a{
 
 <div class="star-buttons">
 
-<button class="star" data-value="1">★</button>
-<button class="star" data-value="2">★</button>
-<button class="star" data-value="3">★</button>
-<button class="star" data-value="4">★</button>
-<button class="star" data-value="5">★</button>
+<button class="star" data-value="1">
+    ★
+</button>
+
+<button class="star" data-value="2">
+    ★
+</button>
+
+<button class="star" data-value="3">
+    ★
+</button>
+
+<button class="star" data-value="4">
+    ★
+</button>
+
+<button class="star" data-value="5">
+    ★
+</button>
 
 </div>
 
 
-<div class="rating-message" id="ratingMessage">
-    هنوز امتیازی ثبت نکرده‌اید.
+<div
+class="rating-message"
+id="ratingMessage">
+
+هنوز امتیازی ثبت نکرده‌اید.
+
 </div>
 
 </div>
@@ -1679,26 +2015,25 @@ footer a{
 <p>
 
 اگر فکر می‌کنید دوستانتان هم به خدمات
-زیبایی و مراقبتی نیاز دارند،
-سایت سارا بیوتی را برایشان ارسال کنید
-تا بتوانند خدمات، آدرس و راه‌های ارتباطی
-را به‌راحتی ببینند.
+زیبایی نیاز دارند، سایت سارا بیوتی را
+برای آن‌ها ارسال کنید تا بتوانند خدمات،
+آدرس و راه‌های ارتباطی را به‌راحتی ببینند.
 
 </p>
 
 
 <button
-    class="share-button"
-    onclick="shareSite()">
+class="share-button"
+onclick="shareSite()">
 
-    📤 معرفی به دوستان
+📤 معرفی به دوستان
 
 </button>
 
 
 <div
-    class="share-status"
-    id="shareStatus">
+class="share-status"
+id="shareStatus">
 
 </div>
 
@@ -1717,9 +2052,13 @@ footer a{
 
 <div class="section-title">
 
-<span>CONTACT</span>
+<span>
+    CONTACT
+</span>
 
-<h2>آدرس و تماس</h2>
+<h2>
+    آدرس و تماس
+</h2>
 
 </div>
 
@@ -1846,7 +2185,9 @@ class="btn btn-primary">
 
 <div class="section-title">
 
-<span>SCAN</span>
+<span>
+    SCAN
+</span>
 
 <h2>
     کیوآر کد سایت
@@ -1889,7 +2230,9 @@ alt="QR Code">
 
 <div class="section-title">
 
-<span>REVIEWS</span>
+<span>
+    REVIEWS
+</span>
 
 <h2>
     نظرات مشتریان
@@ -1908,7 +2251,7 @@ alt="QR Code">
 <div class="review">
 
 <div class="stars">
-★★★★★
+    ★★★★★
 </div>
 
 <p>
@@ -1926,7 +2269,7 @@ alt="QR Code">
 <div class="review">
 
 <div class="stars">
-★★★★★
+    ★★★★★
 </div>
 
 <p>
@@ -1944,7 +2287,7 @@ alt="QR Code">
 <div class="review">
 
 <div class="stars">
-★★★★★
+    ★★★★★
 </div>
 
 <p>
@@ -2005,6 +2348,10 @@ alt="QR Code">
     خدمات
 </a>
 
+<a href="#why">
+    چرا ما؟
+</a>
+
 <a href="#rating">
     امتیازدهی
 </a>
@@ -2063,7 +2410,7 @@ target="_blank">
 
 
 /* =========================
-   WELCOME
+   START
 ========================= */
 
 function startSite(){
@@ -2118,7 +2465,7 @@ function toggleTheme(){
 
     if(dark){
 
-        button.innerHTML = "☀️";
+        button.innerHTML="☀️";
 
         localStorage.setItem(
             "saraTheme",
@@ -2127,7 +2474,7 @@ function toggleTheme(){
 
     }else{
 
-        button.innerHTML = "🌙";
+        button.innerHTML="🌙";
 
         localStorage.setItem(
             "saraTheme",
@@ -2140,7 +2487,7 @@ function toggleTheme(){
 
 
 /* =========================
-   LOAD THEME
+   LOAD DARK MODE
 ========================= */
 
 if(
@@ -2152,7 +2499,7 @@ if(
 
     document.getElementById(
         "themeButton"
-    ).innerHTML = "☀️";
+    ).innerHTML="☀️";
 
 }
 
@@ -2169,7 +2516,6 @@ const ratingMessage =
 
 const ratingNumber =
     document.getElementById("ratingNumber");
-
 
 const savedRating =
     localStorage.getItem("saraRating");
@@ -2199,13 +2545,15 @@ function showRating(value){
 
 if(savedRating){
 
-    showRating(Number(savedRating));
+    showRating(
+        Number(savedRating)
+    );
 
     ratingNumber.innerHTML =
         Number(savedRating).toFixed(1);
 
     ratingMessage.innerHTML =
-        "⭐ امتیاز شما ثبت شد. ممنون از همراهی شما!";
+        "⭐ امتیاز شما ثبت شده است. ممنون از همراهی شما!";
 
 }
 
@@ -2239,7 +2587,7 @@ stars.forEach(function(star){
 
 
 /* =========================
-   SHARE WEBSITE
+   SHARE
 ========================= */
 
 async function shareSite(){
@@ -2250,7 +2598,7 @@ async function shareSite(){
         "SARA BEAUTY | سالن زیبایی سارا شاه حسینی",
 
         text:
-        "سالن زیبایی سارا شاه حسینی در تهران؛ خدمات زیبایی، مو، ناخن، مژه و مراقبت زیبایی.",
+        "سالن زیبایی سارا شاه حسینی در تهران؛ خدمات زیبایی، مو، ناخن، مژه، میکاپ و عروس.",
 
         url:
         window.location.href
@@ -2259,12 +2607,12 @@ async function shareSite(){
 
 
     const status =
-        document.getElementById("shareStatus");
+        document.getElementById(
+            "shareStatus"
+        );
 
 
-    if(
-        navigator.share
-    ){
+    if(navigator.share){
 
         try{
 
@@ -2277,8 +2625,7 @@ async function shareSite(){
 
         }catch(error){
 
-            status.innerHTML =
-                "";
+            status.innerHTML="";
 
         }
 
@@ -2296,7 +2643,7 @@ async function shareSite(){
         }catch(error){
 
             status.innerHTML =
-                "لینک سایت را از نوار آدرس کپی کنید و برای دوستانتان بفرستید.";
+                "لینک سایت را از نوار آدرس کپی کنید.";
 
         }
 
@@ -2304,25 +2651,7 @@ async function shareSite(){
 
 }
 
-
-/* =========================
-   ESCAPE
-========================= */
-
-document.addEventListener(
-    "keydown",
-    function(event){
-
-        if(event.key === "Escape"){
-
-            startSite();
-
-        }
-
-    }
-);
-
 </script>
 
 </body>
-   </html>
+    </html>
