@@ -1,1060 +1,2400 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#c60b1e" />
-    <title>HISPANESH | اسپانیا با دانش</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<title>SARA BEAUTY | سالن زیبایی سارا شاه حسینی</title>
 
-    <style>
-        /* ===== RESET & ROOT ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
 
-        :root {
-            --red: #c60b1e;
-            --red-dark: #a00a18;
-            --red-glow: rgba(198, 11, 30, 0.35);
-            --yellow: #ffc400;
-            --gold: #ffd84d;
-            --gold-glow: rgba(255, 196, 0, 0.25);
-            --bg: #f0f2f8;
-            --card: rgba(255, 255, 255, 0.72);
-            --card-border: rgba(255, 255, 255, 0.35);
-            --text: #0b0f1a;
-            --muted: #4a5568;
-            --shadow: 0 25px 80px rgba(0, 0, 0, 0.10);
-            --shadow-glow: 0 20px 60px rgba(198, 11, 30, 0.18);
-            --radius: 28px;
-            --glass: rgba(255, 255, 255, 0.45);
-            --glass-border: rgba(255, 255, 255, 0.25);
-        }
+:root{
+--bg:#faf7f8;
+--card:#ffffff;
+--text:#302b2f;
+--muted:#756d73;
+--pink:#c85f87;
+--pink2:#df82a5;
+--soft:#fae7ee;
+--border:#eadce3;
+--dark:#29252a;
+--shadow:rgba(70,45,60,.12);
+}
 
-        body.dark {
-            --bg: #070b12;
-            --card: rgba(18, 26, 40, 0.78);
-            --card-border: rgba(255, 255, 255, 0.06);
-            --text: #f0f4ff;
-            --muted: #9aaec9;
-            --shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
-            --glass: rgba(18, 26, 40, 0.55);
-            --glass-border: rgba(255, 255, 255, 0.06);
-        }
+body.dark{
+--bg:#141215;
+--card:#211e21;
+--text:#f7eef2;
+--muted:#bdb3b9;
+--pink:#e17ca4;
+--pink2:#ed91b4;
+--soft:#382630;
+--border:#443840;
+--dark:#0d0c0e;
+--shadow:rgba(0,0,0,.4);
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
 
-        body {
-            font-family: "Vazirmatn", "Inter", sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.8;
-            overflow-x: hidden;
-            transition: background 0.5s, color 0.3s;
-        }
+body{
+font-family:Tahoma,Arial,sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:2;
+transition:.4s;
+}
 
-        /* ===== SCROLLBAR ===== */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, var(--red), var(--yellow));
-            border-radius: 12px;
-        }
+a{
+text-decoration:none;
+color:inherit;
+}
 
-        /* ===== LOADER ===== */
-        #loader {
-            position: fixed;
-            inset: 0;
-            z-index: 99999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 24px;
-            background: #080b14;
-            transition: opacity 0.9s, visibility 0.9s;
-        }
-        #loader.hide {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-        .loader-ring {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            border: 4px solid transparent;
-            border-top-color: var(--red);
-            border-bottom-color: var(--yellow);
-            animation: spin 0.9s linear infinite;
-        }
-        .loader-ring::after {
-            content: "🇪🇸";
-            position: absolute;
-            inset: 0;
-            display: grid;
-            place-items: center;
-            font-size: 34px;
-        }
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        .loader-text {
-            font-family: "Playfair Display", serif;
-            font-size: 32px;
-            letter-spacing: 8px;
-            color: #fff;
-            opacity: 0.7;
-        }
+button{
+font-family:inherit;
+}
 
-        /* ===== FLOATING FLAGS ===== */
-        .flag-float {
-            position: fixed;
-            z-index: 0;
-            font-size: 44px;
-            pointer-events: none;
-            opacity: 0.30;
-            filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.08));
-            animation: floatFlag 12s ease-in-out infinite alternate;
-        }
-        .flag-float:nth-child(1) {
-            top: 8%;
-            left: 2%;
-            animation-delay: 0s;
-        }
-        .flag-float:nth-child(2) {
-            top: 22%;
-            right: 2%;
-            animation-delay: 2s;
-            font-size: 32px;
-        }
-        .flag-float:nth-child(3) {
-            bottom: 18%;
-            left: 3%;
-            animation-delay: 4s;
-            font-size: 38px;
-        }
-        .flag-float:nth-child(4) {
-            bottom: 8%;
-            right: 3%;
-            animation-delay: 6s;
-        }
-        @keyframes floatFlag {
-            0% {
-                transform: translateY(0) rotate(-6deg) scale(1);
-            }
-            100% {
-                transform: translateY(-40px) rotate(6deg) scale(1.08);
-            }
-        }
+section{
+padding:90px 20px;
+}
 
-        /* ===== HEADER / GLASS NAV ===== */
-        header {
-            position: sticky;
-            top: 16px;
-            z-index: 5000;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .nav {
-            background: var(--glass);
-            backdrop-filter: blur(28px) saturate(1.4);
-            -webkit-backdrop-filter: blur(28px) saturate(1.4);
-            border: 1px solid var(--glass-border);
-            border-radius: 60px;
-            padding: 10px 28px;
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            box-shadow: var(--shadow);
-            transition: background 0.4s;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--text);
-            text-decoration: none;
-            min-width: max-content;
-        }
-        .logo-mark {
-            width: 50px;
-            height: 50px;
-            border-radius: 16px;
-            display: grid;
-            place-items: center;
-            font-size: 28px;
-            background: linear-gradient(135deg, var(--red), var(--yellow));
-            box-shadow: 0 8px 24px var(--red-glow);
-            transition: transform 0.3s;
-        }
-        .logo:hover .logo-mark {
-            transform: scale(1.05) rotate(-4deg);
-        }
-        .logo-text {
-            font-family: "Playfair Display", serif;
-            font-size: 24px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            background: linear-gradient(135deg, var(--red), var(--yellow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .logo small {
-            display: block;
-            font: 9px "Vazirmatn", sans-serif;
-            color: var(--muted);
-            -webkit-text-fill-color: var(--muted);
-            letter-spacing: 0;
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2px;
-            flex: 1;
-            flex-wrap: wrap;
-        }
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
-            padding: 8px 14px;
-            border-radius: 40px;
-            font-size: 13px;
-            font-weight: 600;
-            transition: 0.3s;
-            opacity: 0.8;
-        }
-        .nav-links a:hover {
-            background: var(--red);
-            color: #fff;
-            opacity: 1;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px var(--red-glow);
-        }
-        .actions {
-            display: flex;
-            gap: 8px;
-        }
-        .icon-btn {
-            width: 44px;
-            height: 44px;
-            border-radius: 40px;
-            border: 1px solid var(--glass-border);
-            background: var(--glass);
-            backdrop-filter: blur(8px);
-            color: var(--text);
-            font-size: 18px;
-            transition: 0.3s;
-        }
-        .icon-btn:hover {
-            background: var(--red);
-            color: #fff;
-            border-color: var(--red);
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 28px var(--red-glow);
-        }
+.container{
+max-width:1100px;
+margin:auto;
+}
 
-        /* ===== HERO ===== */
-        .hero {
-            min-height: 92vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            padding: 40px 6% 80px;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse at 20% 20%, rgba(198, 11, 30, 0.15), transparent 55%),
-                radial-gradient(ellipse at 80% 80%, rgba(255, 196, 0, 0.15), transparent 55%),
-                radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.05), transparent 70%);
-            z-index: 0;
-        }
-        .hero-grid {
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(198, 11, 30, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(198, 11, 30, 0.05) 1px, transparent 1px);
-            background-size: 60px 60px;
-            mask-image: radial-gradient(ellipse at center, #000, transparent 70%);
-            z-index: 0;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 1450px;
-            margin: 0 auto;
-            width: 100%;
-        }
-        .hero-badge {
-            display: inline-flex;
-            padding: 10px 22px;
-            border-radius: 100px;
-            background: var(--glass);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            font-weight: 700;
-            font-size: 13px;
-            color: var(--red);
-            margin-bottom: 24px;
-            box-shadow: var(--shadow);
-        }
-        .hero h1 {
-            font-family: "Playfair Display", serif;
-            font-size: clamp(70px, 12vw, 140px);
-            line-height: 0.92;
-            letter-spacing: 6px;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--red), #a00a18 30%, var(--yellow) 70%, #e6a800);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            filter: drop-shadow(0 4px 20px rgba(198, 11, 30, 0.15));
-        }
-        .hero h2 {
-            font-size: clamp(28px, 4.5vw, 52px);
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: var(--text);
-        }
-        .hero p {
-            max-width: 700px;
-            color: var(--muted);
-            font-size: 18px;
-            line-height: 1.9;
-        }
-        .hero-buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-            margin-top: 32px;
-        }
-        .btn {
-            border: 0;
-            border-radius: 60px;
-            padding: 14px 32px;
-            font-weight: 700;
-            font-size: 15px;
-            transition: 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .btn:hover {
-            transform: translateY(-5px) scale(1.02);
-        }
-        .btn-primary {
-            color: #fff;
-            background: linear-gradient(135deg, var(--red), #7a0510);
-            box-shadow: 0 12px 40px var(--red-glow);
-        }
-        .btn-primary:hover {
-            box-shadow: 0 18px 56px var(--red-glow);
-        }
-        .btn-secondary {
-            background: var(--glass);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            color: var(--text);
-        }
-        .btn-secondary:hover {
-            background: var(--red);
-            color: #fff;
-            border-color: var(--red);
-        }
 
-        /* ===== SECTION ===== */
-        section {
-            max-width: 1450px;
-            margin: 0 auto;
-            padding: 80px 30px;
-            position: relative;
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .eyebrow {
-            display: inline-block;
-            color: var(--red);
-            font-weight: 800;
-            letter-spacing: 3px;
-            font-size: 12px;
-            text-transform: uppercase;
-            background: rgba(198, 11, 30, 0.08);
-            padding: 6px 20px;
-            border-radius: 60px;
-            margin-bottom: 12px;
-        }
-        .section-title h2 {
-            font-family: "Playfair Display", serif;
-            font-size: clamp(34px, 5vw, 56px);
-            margin: 6px 0 12px;
-            font-weight: 800;
-        }
-        .section-title p {
-            max-width: 700px;
-            margin: 0 auto;
-            color: var(--muted);
-            font-size: 17px;
-        }
+/* WELCOME */
 
-        /* ===== GLASS CARDS ===== */
-        .card,
-        .stat,
-        .team,
-        .big-box,
-        .comment,
-        .quiz,
-        .share-box {
-            background: var(--card);
-            backdrop-filter: blur(20px) saturate(1.3);
-            -webkit-backdrop-filter: blur(20px) saturate(1.3);
-            border: 1px solid var(--card-border);
-            box-shadow: var(--shadow);
-            border-radius: var(--radius);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        .card:hover,
-        .stat:hover,
-        .team:hover {
-            transform: translateY(-10px) scale(1.01);
-            box-shadow: var(--shadow), 0 0 40px rgba(198, 11, 30, 0.06);
-            border-color: rgba(198, 11, 30, 0.15);
-        }
+.welcome{
+position:fixed;
+inset:0;
+z-index:99999;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:25px;
+text-align:center;
+color:white;
 
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-        .stat {
-            padding: 28px 22px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .stat::after {
-            content: "";
-            position: absolute;
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--red), var(--yellow));
-            opacity: 0.06;
-            right: -50px;
-            bottom: -50px;
-        }
-        .stat-icon {
-            font-size: 34px;
-            display: block;
-            margin-bottom: 6px;
-        }
-        .stat strong {
-            display: block;
-            font-size: 32px;
-            color: var(--red);
-            font-weight: 900;
-        }
-        .stat span {
-            color: var(--muted);
-            font-size: 14px;
-        }
+background:
+radial-gradient(circle at 15% 20%,rgba(225,130,165,.3),transparent 30%),
+radial-gradient(circle at 85% 80%,rgba(220,170,190,.2),transparent 30%),
+linear-gradient(135deg,#302b30,#59434e);
 
-        /* ===== CARDS GRID ===== */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        .card {
-            padding: 30px 26px;
-            position: relative;
-            overflow: hidden;
-        }
-        .card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--red), var(--yellow));
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.5s;
-        }
-        .card:hover::before {
-            transform: scaleX(1);
-        }
-        .card-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 20px;
-            display: grid;
-            place-items: center;
-            background: linear-gradient(135deg, rgba(198, 11, 30, 0.10), rgba(255, 196, 0, 0.10));
-            font-size: 32px;
-            margin-bottom: 18px;
-            transition: 0.3s;
-        }
-        .card:hover .card-icon {
-            transform: scale(1.08) rotate(-4deg);
-        }
-        .card h3 {
-            font-size: 22px;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-        .card p {
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.7;
-        }
+transition:.7s;
+}
 
-        /* ===== CITY ===== */
-        .city {
-            padding: 0;
-            overflow: hidden;
-        }
-        .city-top {
-            padding: 28px 26px;
-            background: linear-gradient(135deg, var(--red), #5e0610);
-            color: #fff;
-            position: relative;
-        }
-        .city-top h3 {
-            font-size: 28px;
-            font-weight: 800;
-        }
-        .city-content {
-            padding: 24px 26px 28px;
-        }
-        .city-filter {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 32px;
-        }
-        .city-filter button {
-            padding: 10px 22px;
-            border-radius: 60px;
-            border: 1px solid var(--card-border);
-            background: var(--glass);
-            backdrop-filter: blur(8px);
-            color: var(--text);
-            font-weight: 600;
-            transition: 0.3s;
-        }
-        .city-filter button.active,
-        .city-filter button:hover {
-            background: linear-gradient(135deg, var(--red), #7a0510);
-            color: #fff;
-            border-color: var(--red);
-            box-shadow: 0 8px 24px var(--red-glow);
-            transform: translateY(-2px);
-        }
+.welcome.hide{
+opacity:0;
+visibility:hidden;
+}
 
-        /* ===== TIMELINE ===== */
-        .timeline {
-            position: relative;
-            max-width: 950px;
-            margin: 0 auto;
-        }
-        .timeline::before {
-            content: "";
-            position: absolute;
-            right: 20px;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(var(--red), var(--yellow));
-            border-radius: 8px;
-        }
-        .timeline-item {
-            position: relative;
-            padding: 0 70px 40px 0;
-        }
-        .timeline-dot {
-            position: absolute;
-            right: 6px;
-            top: 6px;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: var(--yellow);
-            border: 6px solid var(--red);
-            box-shadow: 0 0 0 6px rgba(198, 11, 30, 0.12);
-            z-index: 2;
-        }
-        .timeline-box {
-            background: var(--card);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--card-border);
-            padding: 26px 30px;
-            border-radius: 24px;
-            box-shadow: var(--shadow);
-        }
-        .timeline-year {
-            color: var(--red);
-            font-weight: 900;
-            font-size: 18px;
-            letter-spacing: 1px;
-        }
+.welcome-box{
+max-width:750px;
+animation:welcomeIn 1s ease;
+}
 
-        /* ===== FOOTBALL ===== */
-        .football-hero {
-            padding: 48px 44px;
-            border-radius: 35px;
-            background: linear-gradient(135deg, #0b111f, #1b263b);
-            color: #fff;
-            margin-bottom: 32px;
-            position: relative;
-            overflow: hidden;
-        }
-        .football-hero::after {
-            content: "⚽";
-            position: absolute;
-            font-size: 200px;
-            left: -20px;
-            bottom: -80px;
-            opacity: 0.06;
-        }
-        .football-hero h3 {
-            font-size: 42px;
-            color: var(--yellow);
-            font-family: "Playfair Display", serif;
-        }
+@keyframes welcomeIn{
+from{
+opacity:0;
+transform:translateY(35px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
 
-        .teams {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-        .team {
-            text-align: center;
-            padding: 28px 18px;
-        }
-        .team-logo {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 16px;
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            background: linear-gradient(135deg, var(--red), var(--yellow));
-            font-size: 38px;
-            color: #fff;
-            box-shadow: 0 8px 24px rgba(198, 11, 30, 0.2);
-            transition: 0.3s;
-        }
-        .team:hover .team-logo {
-            transform: scale(1.08) rotate(-6deg);
-        }
-        .team h4 {
-            font-size: 20px;
-            font-weight: 800;
-        }
+.welcome-logo{
+width:100px;
+height:100px;
+margin:0 auto 20px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-size:43px;
+font-weight:bold;
+background:linear-gradient(135deg,#e58cab,#a94f75);
+box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
 
-        /* ===== CULTURE ===== */
-        .culture-box {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-        .big-box {
-            padding: 34px 32px;
-        }
-        .big-box h3 {
-            font-size: 28px;
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
-        .big-box p {
-            color: var(--muted);
-        }
+.welcome-small{
+color:#efa7bf;
+font-size:13px;
+font-weight:bold;
+}
 
-        /* ===== WEATHER ===== */
-        .weather-card {
-            max-width: 650px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 44px 36px;
-            border-radius: 35px;
-            background: linear-gradient(145deg, #0e1a2b, #1d2f44);
-            color: #fff;
-            box-shadow: var(--shadow);
-        }
-        .weather-temp {
-            font-size: 74px;
-            font-weight: 900;
-            color: var(--yellow);
-        }
-        .weather-details {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin-top: 22px;
-        }
-        .weather-details div {
-            background: rgba(255, 255, 255, 0.06);
-            border-radius: 16px;
-            padding: 14px;
-            backdrop-filter: blur(8px);
-        }
+.welcome h1{
+font-size:clamp(30px,6vw,58px);
+line-height:1.45;
+margin:10px 0 18px;
+}
 
-        /* ===== CLOCK ===== */
-        .clock-box {
-            text-align: center;
-            padding: 56px;
-            border-radius: 35px;
-            background: linear-gradient(145deg, var(--red), #5e0610);
-            color: #fff;
-            box-shadow: 0 20px 60px var(--red-glow);
-        }
-        .clock {
-            font-size: clamp(60px, 12vw, 110px);
-            font-weight: 900;
-            letter-spacing: 6px;
-            direction: ltr;
-            font-family: "Inter", monospace;
-        }
+.welcome p{
+color:#ded6da;
+font-size:14px;
+}
 
-        /* ===== QUIZ ===== */
-        .quiz {
-            padding: 38px 34px;
-        }
-        .quiz::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, var(--red), var(--yellow));
-            border-radius: 35px 35px 0 0;
-        }
-        .quiz-progress {
-            height: 10px;
-            background: rgba(127, 127, 127, 0.12);
-            border-radius: 60px;
-            overflow: hidden;
-        }
-        .quiz-progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, var(--red), var(--yellow));
-            border-radius: 60px;
-            transition: width 0.5s;
-        }
-        .quiz-option {
-            text-align: right;
-            padding: 16px 20px;
-            border-radius: 16px;
-            border: 1px solid var(--card-border);
-            background: var(--glass);
-            color: var(--text);
-            transition: 0.25s;
-            font-weight: 500;
-        }
-        .quiz-option:hover {
-            border-color: var(--red);
-            transform: translateX(-4px);
-        }
-        .quiz-option.correct {
-            border-color: #16a34a;
-            background: rgba(22, 163, 74, 0.10);
-        }
-        .quiz-option.wrong {
-            border-color: #dc2626;
-            background: rgba(220, 38, 38, 0.10);
-        }
+.start-button{
+display:inline-block;
+margin-top:30px;
+padding:14px 35px;
+border-radius:16px;
+background:linear-gradient(135deg,#d8759d,#a94e75);
+color:white;
+font-size:14px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
 
-        /* ===== SHARE ===== */
-        .share-box {
-            display: grid;
-            grid-template-columns: 1fr 260px;
-            gap: 30px;
-            align-items: center;
-            padding: 38px 36px;
-        }
-        .qr {
-            width: 200px;
-            height: 200px;
-            background: #fff;
-            padding: 14px;
-            border-radius: 20px;
-            margin: 0 auto;
-        }
-        .qr img {
-            width: 100%;
-            height: 100%;
-        }
+.start-button:hover{
+transform:translateY(-4px) scale(1.02);
+}
 
-        /* ===== GROUP ===== */
-        .group {
-            background: linear-gradient(145deg, #0d111f, #161c2e);
-            color: #fff;
-            border-radius: 35px;
-            padding: 56px 44px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .group::after {
-            content: "🇪🇸";
-            position: absolute;
-            font-size: 260px;
-            right: -40px;
-            bottom: -80px;
-            opacity: 0.04;
-        }
-        .group h2 {
-            font-family: "Playfair Display", serif;
-            font-size: 48px;
-            color: var(--yellow);
-        }
-        .leader {
-            margin: 28px auto;
-            padding: 24px;
-            max-width: 500px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 24px;
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-        }
-        .members {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-        }
-        .member {
-            padding: 10px 22px;
-            border-radius: 60px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            font-weight: 500;
-        }
 
-        /* ===== FOOTER ===== */
-        footer {
-            background: #080c16;
-            color: #fff;
-            padding: 60px 30px 30px;
-            margin-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-        }
-        .footer-grid {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-        }
-        footer h3 {
-            color: var(--yellow);
-            margin-bottom: 14px;
-            font-size: 18px;
-        }
-        footer p,
-        footer li {
-            color: #9aaec9;
-            font-size: 14px;
-            line-height: 2;
-        }
-        footer ul {
-            list-style: none;
-        }
-        .copyright {
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            margin-top: 40px;
-            padding-top: 28px;
-            color: #5a6f8a;
-            font-size: 14px;
-        }
+/* DATE */
 
-        /* ===== NOTIFICATION ===== */
-        #notification {
-            position: fixed;
-            left: 28px;
-            bottom: 28px;
-            background: var(--card);
-            backdrop-filter: blur(24px);
-            border: 1px solid var(--card-border);
-            color: var(--text);
-            padding: 16px 26px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            transform: translateY(120px);
-            opacity: 0;
-            transition: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            z-index: 9999;
-            font-weight: 600;
-        }
-        #notification.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
+.date-box{
+position:fixed;
+top:90px;
+left:17px;
+z-index:900;
+padding:6px 12px;
+border-radius:12px;
+background:var(--card);
+border:1px solid var(--border);
+color:var(--pink);
+font-size:10px;
+box-shadow:0 8px 25px var(--shadow);
+}
 
-        #backTop {
-            position: fixed;
-            bottom: 28px;
-            right: 28px;
-            width: 54px;
-            height: 54px;
-            border: 0;
-            border-radius: 60px;
-            background: linear-gradient(135deg, var(--red), #7a0510);
-            color: #fff;
-            font-size: 22px;
-            z-index: 8000;
-            display: none;
-            box-shadow: 0 12px 36px var(--red-glow);
-            transition: 0.3s;
-        }
-        #backTop:hover {
-            transform: translateY(-4px) scale(1.05);
-        }
 
-        /* ===== RESPONSIVE ===== */
-        @media(max-width:1050px) {
-            .nav-links {
-                display: none;
-            }
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .cards,
-            .comments {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .teams {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media(max-width:700px) {
-            .hero {
-                padding: 30px 20px 60px;
-                min-height: 80vh;
-            }
-            section {
-                padding: 50px 16px;
-            }
-            .stats,
-            .cards,
-            .comments,
-            .teams,
-            .culture-box,
-            .share-box,
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            .nav {
-                padding: 8px 16px;
-                border-radius: 40px;
-            }
-            .logo-text {
-                font-size: 18px;
-            }
-            .hero h1 {
-                font-size: 48px;
-            }
-            .football-hero,
-            .group {
-                padding: 28px 20px;
-            }
-            .share-box {
-                text-align: center;
-            }
-            .qr {
-                width: 160px;
-                height: 160px;
-            }
-            .flag-float {
-                display: none;
-            }
-            .clock {
-                font-size: 40px;
-            }
-        }
-    </style>
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+right:0;
+left:0;
+z-index:1000;
+background:var(--card);
+border-bottom:1px solid var(--border);
+backdrop-filter:blur(15px);
+}
+
+.nav{
+max-width:1200px;
+height:76px;
+margin:auto;
+padding:0 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:14px;
+font-weight:bold;
+}
+
+.logo-icon{
+width:44px;
+height:44px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+background:linear-gradient(135deg,var(--pink2),#a94f75);
+}
+
+nav{
+display:flex;
+gap:17px;
+}
+
+nav a{
+color:var(--muted);
+font-size:11px;
+transition:.25s;
+}
+
+nav a:hover{
+color:var(--pink);
+}
+
+.nav-call{
+padding:7px 15px;
+border-radius:11px;
+background:var(--pink);
+color:white!important;
+font-size:11px;
+}
+
+.theme-btn{
+width:42px;
+height:42px;
+border-radius:50%;
+border:1px solid var(--border);
+background:var(--card);
+color:var(--text);
+cursor:pointer;
+font-size:18px;
+transition:.3s;
+}
+
+.theme-btn:hover{
+transform:rotate(20deg) scale(1.08);
+}
+
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+padding:155px 20px 90px;
+display:flex;
+align-items:center;
+text-align:center;
+
+background:
+radial-gradient(circle at 85% 15%,rgba(216,120,155,.18),transparent 30%),
+radial-gradient(circle at 10% 80%,rgba(170,155,170,.12),transparent 32%),
+var(--bg);
+}
+
+.hero-container{
+width:100%;
+max-width:1000px;
+margin:auto;
+}
+
+.hero-label{
+color:var(--pink);
+font-size:11px;
+font-weight:bold;
+}
+
+.hero h1{
+font-size:clamp(43px,7vw,78px);
+line-height:1.3;
+margin:12px 0 18px;
+}
+
+.hero h1 span{
+color:var(--pink);
+}
+
+.hero-description{
+max-width:790px;
+margin:auto;
+color:var(--muted);
+font-size:14px;
+}
+
+.hero-buttons{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.btn{
+display:inline-block;
+padding:12px 23px;
+border-radius:14px;
+font-size:12px;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn-primary{
+color:white;
+background:linear-gradient(135deg,var(--pink2),#a84e74);
+box-shadow:0 12px 28px rgba(180,70,115,.2);
+}
+
+.btn-primary:hover{
+transform:translateY(-3px);
+}
+
+.btn-light{
+background:var(--card);
+border:1px solid var(--border);
+color:var(--text);
+}
+
+.btn-light:hover{
+transform:translateY(-3px);
+}
+
+
+/* TITLES */
+
+.section-title{
+text-align:center;
+margin-bottom:45px;
+}
+
+.section-title span{
+color:var(--pink);
+font-size:11px;
+font-weight:bold;
+}
+
+.section-title h2{
+font-size:36px;
+margin:5px 0 8px;
+}
+
+.section-title p{
+color:var(--muted);
+font-size:13px;
+}
+
+
+/* SERVICES */
+
+.services{
+background:var(--card);
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.service{
+padding:30px 22px;
+text-align:center;
+border:1px solid var(--border);
+border-radius:24px;
+background:var(--card);
+transition:.35s;
+}
+
+.service:hover{
+transform:translateY(-8px);
+border-color:var(--pink2);
+box-shadow:0 20px 45px var(--shadow);
+}
+
+.service-icon{
+width:67px;
+height:67px;
+margin:0 auto 15px;
+border-radius:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:var(--soft);
+font-size:28px;
+}
+
+.service h3{
+font-size:16px;
+margin-bottom:8px;
+}
+
+.service p{
+color:var(--muted);
+font-size:11px;
+}
+
+
+/* WHY */
+
+.why{
+background:linear-gradient(135deg,var(--bg),var(--soft));
+}
+
+.why-intro{
+max-width:820px;
+margin:0 auto 40px;
+text-align:center;
+color:var(--muted);
+font-size:14px;
+}
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.why-card{
+padding:32px 30px;
+background:var(--card);
+border:1px solid var(--border);
+border-radius:25px;
+transition:.35s;
+}
+
+.why-card:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 45px var(--shadow);
+}
+
+.why-number{
+display:inline-flex;
+width:42px;
+height:42px;
+align-items:center;
+justify-content:center;
+border-radius:13px;
+background:var(--soft);
+color:var(--pink);
+font-weight:bold;
+margin-bottom:12px;
+}
+
+.why-card h3{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.why-card p{
+color:var(--muted);
+font-size:12px;
+}
+
+.why-final{
+max-width:750px;
+margin:40px auto 0;
+padding:25px;
+border-radius:22px;
+text-align:center;
+background:linear-gradient(135deg,#39333a,#55404b);
+color:white;
+font-size:17px;
+font-weight:bold;
+}
+
+
+/* DISCOUNT */
+
+.discount{
+background:var(--card);
+}
+
+.discount-box{
+max-width:850px;
+margin:auto;
+padding:50px 25px;
+border-radius:32px;
+text-align:center;
+color:white;
+
+background:
+radial-gradient(circle at 20% 20%,rgba(255,255,255,.12),transparent 25%),
+linear-gradient(135deg,#3b3036,#654052);
+
+box-shadow:0 20px 50px var(--shadow);
+}
+
+.discount-badge{
+display:inline-block;
+padding:5px 13px;
+border-radius:20px;
+background:#efa5bf;
+color:#392c32;
+font-size:11px;
+font-weight:bold;
+margin-bottom:12px;
+}
+
+.discount-box h2{
+font-size:38px;
+}
+
+.discount-code{
+display:inline-block;
+direction:ltr;
+margin:18px 0;
+padding:10px 25px;
+border:2px dashed #efa5bf;
+border-radius:15px;
+color:#ffd5e3;
+font-size:27px;
+font-weight:bold;
+letter-spacing:3px;
+}
+
+.discount-box p{
+color:#ddd1d6;
+font-size:13px;
+}
+
+.copy-code{
+border:none;
+margin-top:20px;
+padding:11px 22px;
+border-radius:13px;
+background:#efa5bf;
+color:#392c32;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.copy-code:hover{
+transform:translateY(-3px);
+}
+
+.copy-message{
+margin-top:10px;
+font-size:11px;
+color:#efa5bf;
+min-height:20px;
+}
+
+
+/* RESERVATION */
+
+.reservation{
+background:var(--bg);
+}
+
+.reservation-box{
+padding:58px 25px;
+border-radius:32px;
+text-align:center;
+color:white;
+background:linear-gradient(135deg,#39343a,#57414d);
+box-shadow:0 20px 50px var(--shadow);
+}
+
+.reservation-content span{
+color:#efa5be;
+font-size:11px;
+}
+
+.reservation-content h2{
+font-size:35px;
+}
+
+.reservation-content p{
+color:#d5cdd1;
+font-size:13px;
+}
+
+.phone{
+display:inline-block;
+direction:ltr;
+margin:12px 0 20px;
+color:#f1a9c1;
+font-size:26px;
+font-weight:bold;
+}
+
+
+/* ADDRESS */
+
+.address{
+background:var(--bg);
+}
+
+.address-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.address-card{
+padding:35px;
+background:var(--card);
+border-radius:25px;
+border:1px solid var(--border);
+transition:.3s;
+}
+
+.address-card:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 35px var(--shadow);
+}
+
+.address-icon{
+font-size:31px;
+}
+
+.address-card h3{
+margin-bottom:8px;
+}
+
+.address-card p{
+color:var(--muted);
+font-size:13px;
+}
+
+.map-button{
+display:inline-block;
+margin-top:18px;
+padding:9px 17px;
+background:var(--soft);
+color:var(--pink);
+border-radius:11px;
+font-size:11px;
+}
+
+
+/* INSTAGRAM */
+
+.instagram{
+background:var(--card);
+text-align:center;
+}
+
+.instagram-box{
+max-width:700px;
+margin:auto;
+padding:55px 25px;
+border-radius:30px;
+background:linear-gradient(135deg,var(--card),var(--soft));
+border:1px solid var(--border);
+box-shadow:0 15px 40px var(--shadow);
+}
+
+.instagram-icon{
+font-size:50px;
+}
+
+.instagram-box h2{
+font-size:30px;
+}
+
+.instagram-name{
+display:inline-block;
+direction:ltr;
+color:var(--pink);
+font-size:20px;
+font-weight:bold;
+margin:7px 0 20px;
+}
+
+
+/* RATING */
+
+.rating-section{
+background:var(--bg);
+}
+
+.rating-box{
+max-width:760px;
+margin:auto;
+padding:45px 25px;
+text-align:center;
+background:var(--card);
+border:1px solid var(--border);
+border-radius:30px;
+box-shadow:0 18px 45px var(--shadow);
+}
+
+.rating-main{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:15px;
+margin-bottom:20px;
+}
+
+.rating-number{
+font-size:48px;
+font-weight:bold;
+color:var(--pink);
+}
+
+.rating-stars{
+direction:ltr;
+color:#e0a02d;
+font-size:25px;
+letter-spacing:3px;
+}
+
+.rating-text{
+color:var(--muted);
+font-size:12px;
+}
+
+.star-buttons{
+direction:ltr;
+display:flex;
+justify-content:center;
+gap:7px;
+margin:20px 0;
+}
+
+.star{
+border:none;
+background:transparent;
+font-size:34px;
+color:#c9c1c5;
+cursor:pointer;
+transition:.2s;
+}
+
+.star:hover,
+.star.selected{
+color:#e0a02d;
+transform:scale(1.15);
+}
+
+.rating-message{
+color:var(--pink);
+font-size:12px;
+min-height:25px;
+}
+
+
+/* SHARE */
+
+.share-section{
+background:var(--card);
+}
+
+.share-box{
+max-width:850px;
+margin:auto;
+padding:55px 25px;
+text-align:center;
+border-radius:32px;
+background:
+radial-gradient(circle at 10% 20%,rgba(223,127,164,.18),transparent 30%),
+linear-gradient(135deg,var(--soft),var(--card));
+border:1px solid var(--border);
+box-shadow:0 20px 50px var(--shadow);
+}
+
+.share-icon{
+font-size:48px;
+}
+
+.share-box h2{
+font-size:32px;
+margin-bottom:10px;
+}
+
+.share-box p{
+max-width:650px;
+margin:auto;
+color:var(--muted);
+font-size:13px;
+}
+
+.share-button{
+margin-top:25px;
+border:none;
+padding:13px 25px;
+border-radius:15px;
+color:white;
+background:linear-gradient(135deg,var(--pink2),#a84e74);
+font-size:12px;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 12px 28px rgba(180,70,115,.2);
+transition:.3s;
+}
+
+.share-button:hover{
+transform:translateY(-4px);
+}
+
+.share-status{
+margin-top:14px;
+min-height:25px;
+color:var(--pink);
+font-size:11px;
+}
+
+
+/* QR */
+
+.qr{
+background:var(--bg);
+text-align:center;
+}
+
+.qr-card{
+max-width:410px;
+margin:auto;
+padding:35px;
+background:var(--card);
+border-radius:30px;
+box-shadow:0 15px 45px var(--shadow);
+border:1px solid var(--border);
+}
+
+.qr-code{
+width:210px;
+height:210px;
+display:block;
+margin:20px auto;
+}
+
+.qr-card p{
+color:var(--muted);
+font-size:12px;
+}
+
+
+/* REVIEWS */
+
+.reviews{
+background:var(--card);
+}
+
+.reviews-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.review{
+padding:28px;
+border:1px solid var(--border);
+border-radius:23px;
+background:var(--card);
+}
+
+.stars{
+color:#e0a02d;
+letter-spacing:2px;
+}
+
+.review p{
+color:var(--muted);
+font-size:12px;
+}
+
+.review strong{
+display:block;
+margin-top:15px;
+font-size:12px;
+}
+
+
+/* FOOTER */
+
+footer{
+padding:55px 20px 25px;
+background:var(--dark);
+color:white;
+}
+
+.footer-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1.5fr 1fr 1fr;
+gap:35px;
+}
+
+footer h3{
+margin-bottom:14px;
+}
+
+footer p,
+footer a{
+color:#bcb4b9;
+font-size:12px;
+}
+
+footer a{
+display:block;
+margin-bottom:7px;
+}
+
+.copyright{
+max-width:1100px;
+margin:35px auto 0;
+padding-top:20px;
+border-top:1px solid #484247;
+text-align:center;
+color:#969095;
+font-size:10px;
+}
+
+
+/* ANIMATION */
+
+.service,
+.why-card,
+.review,
+.address-card{
+animation:fadeUp .7s ease both;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(18px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+nav{
+display:none;
+}
+
+.services-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.why-grid{
+grid-template-columns:1fr;
+}
+
+.reviews-grid{
+grid-template-columns:1fr;
+}
+
+.address-grid{
+grid-template-columns:1fr;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+}
+
+@media(max-width:550px){
+
+section{
+padding:75px 15px;
+}
+
+.hero{
+padding-top:135px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.services-grid{
+grid-template-columns:1fr;
+}
+
+.date-box{
+top:83px;
+left:8px;
+font-size:8px;
+}
+
+.rating-number{
+font-size:40px;
+}
+
+.star{
+font-size:30px;
+}
+
+.share-box h2{
+font-size:27px;
+}
+
+.discount-box h2{
+font-size:30px;
+}
+
+.discount-code{
+font-size:22px;
+}
+
+}
+
+</style>
 </head>
+
 
 <body>
 
-    <!-- ===== LOADER ===== -->
-    <div id="loader">
-        <div class="loader-ring"></div>
-        <div class="loader-text">HISPANESH</div>
-        <div style="color:#8a9bb5;font-size:14px;letter-spacing:2px;">Bienvenido a España</div>
-    </div>
 
-    <!-- ===== FLOATING FLAGS ===== -->
-    <div class="flag-float">🇪🇸</div>
-    <div class="flag-float">🇪🇸</div>
-    <div class="flag-float">🇪🇸</div>
-    <div class="flag-float">🇪🇸</div>
+<!-- WELCOME -->
 
-    <!-- ===== HEADER ===== -->
-    <header>
-        <nav class="nav">
+<div class="welcome" id="welcome">
 
-            <a href="#home" class="logo">
-                <div class="logo-mark">🇪🇸</div>
-                <div class="logo-text">
-                    HISPANESH
-                    <small>ESPAÑA · CULTURA · FÚTBOL</small>
-                </div>
-            </a>
+<div class="welcome-box">
 
-            <div class="nav-links">
-                <a href="#cities">شهرها</a>
-                <a href="#places">دیدنی‌ها</a>
-                <a href="#history">تاریخ</a>
-                <a href="#culture">فرهنگ</a>
-                <a href="#food">غذا</a>
-                <a href="#football">فوتبال</a>
-                <a href="#travel">سفر</a>
-                <a href="#quiz">چالش</a>
-            </div>
+<div class="welcome-logo">
+S
+</div>
 
-            <div class="actions">
-                <button class="icon-btn" id="langBtn" title="تغییر زبان">🇪🇸</button>
-                <button class="icon-btn" id="themeBtn">🌙</button>
-            </div>
+<div class="welcome-small">
+✦ SARA BEAUTY LOUNGE ✦
+</div>
 
-        </nav>
-    </header>
+<h1>
+به سایت سالن زیبایی
+<br>
+سارا شاه حسینی خوش آمدید
+</h1>
 
-    <main>
+<p>
+زیبایی، ظرافت و حس خوب؛
+اینجا جایی است که برای زیبایی
+و آرامش شما اهمیت ویژه‌ای قائل هستیم.
+</p>
 
-        <!-- ===== HERO ===== -->
-        <section class="hero" id="home">
-            <div class="hero-grid"></div>
-            <div class="hero-content">
+<div
+class="start-button"
+onclick="startSite()">
 
-                <div class="hero-badge" id="heroBadge">🇪🇸 پروژه پژوهشی گروه دانش · Spain Digital Experience
+شروع بازدید ✦
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- DATE -->
+
+<div class="date-box" id="date">
+📅 در حال نمایش تاریخ...
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="nav">
+
+<a href="#home" class="logo">
+
+<div class="logo-icon">
+S
+</div>
+
+<span>
+سارا شاه حسینی
+</span>
+
+</a>
+
+
+<nav>
+
+<a href="#home">صفحه اصلی</a>
+<a href="#services">خدمات</a>
+<a href="#why">چرا ما؟</a>
+<a href="#discount">تخفیف</a>
+<a href="#reservation">رزرو</a>
+<a href="#rating">امتیاز</a>
+<a href="#address">آدرس</a>
+
+</nav>
+
+
+<div style="display:flex;align-items:center;gap:8px;">
+
+<button
+class="theme-btn"
+id="themeButton"
+onclick="toggleTheme()">
+
+🌙
+
+</button>
+
+<a
+href="tel:09355097780"
+class="nav-call">
+
+تماس
+
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-container">
+
+<span class="hero-label">
+✦ SARA BEAUTY LOUNGE ✦
+</span>
+
+<h1>
+
+زیبایی تو،
+<br>
+
+<span>سبک توست.</span>
+
+</h1>
+
+<p class="hero-description">
+
+به سالن زیبایی سارا شاه حسینی خوش آمدید.
+در این مجموعه تلاش می‌کنیم با ارائه خدمات
+متنوع زیبایی و مراقبتی، تجربه‌ای آرام،
+حرفه‌ای و دلنشین برای شما ایجاد کنیم.
+
+از خدمات تخصصی مو و ناخن گرفته تا میکاپ،
+شینیون، خدمات VIP عروس، مژه، فیشیال،
+لیفت صورت، میکروبلیدینگ، شیدینگ لب،
+اپیلاسیون و تتو بدن.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+href="#services"
+class="btn btn-primary">
+
+شروع بازدید ←
+
+</a>
+
+<a
+href="tel:09355097780"
+class="btn btn-light">
+
+📞 تماس برای رزرو
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>OUR SERVICES</span>
+
+<h2>
+خدمات سالن
+</h2>
+
+<p>
+مجموعه‌ای کامل از خدمات زیبایی،
+مو، ناخن، پوست و عروس
+</p>
+
+</div>
+
+
+<div class="services-grid">
+
+
+<div class="service">
+<div class="service-icon">💅</div>
+<h3>ناخن</h3>
+<p>
+خدمات زیبایی و مراقبت از ناخن
+با توجه به فرم دست و سلیقه شما
+برای داشتن ظاهری مرتب و زیبا.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-icon">🎨</div>
+<h3>رنگ و لایت</h3>
+<p>
+اجرای رنگ، لایت و تکنیک‌های زیبایی
+مو با توجه به رنگ پوست، فرم چهره
+و سلیقه شخصی شما.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-icon">✨</div>
+<h3>کراتین و احیای مو</h3>
+<p>
+خدمات مراقبت و احیای مو با هدف
+داشتن موهایی مرتب‌تر، نرم‌تر
+و خوش‌حالت‌تر.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-icon">👁️</div>
+<h3>مژه</h3>
+<p>
+خدمات زیبایی مژه با توجه به فرم چشم
+و نتیجه‌ای که برای ظاهر طبیعی
+یا جذاب‌تر خود می‌خواهید.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-icon">🧖🏻‍♀️</div>
+<h3>فیشیال</h3>
+<p>
+خدمات مراقبت و پاکسازی پوست
+برای کمک به داشتن پوستی تمیزتر،
+شاداب‌تر و باطراوت‌تر.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-icon">🌸</div>
+<h3>لیفت صورت</h3>
+<p>
+خدمات زیبایی و مراقبتی صورت
+برای داشتن ظاهری مرتب‌تر،
+شاداب‌تر و جذاب‌تر.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-icon">🖊️</div>
+<h3>میکروبلیدینگ</h3>
+<p>
+فرم‌دهی و زیباسازی ابرو با توجه
+به فرم صورت و انتخاب مدل مناسب
+برای چهره شما.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-icon">💋</div>
+<h3>شیدینگ لب</h3>
+<p>
+خدمات زیبایی لب با هدف ایجاد
+ظاهر مرتب‌تر و هماهنگ‌تر
+با فرم و سلیقه شما.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-icon">🌷</div>
+<h3>اصلاح و ابرو</h3>
+<p>
+اصلاح و فرم‌دهی ابرو با توجه
+به فرم صورت برای ایجاد ظاهری
+مرتب و هماهنگ.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-icon">💄</div>
+<h3>میکاپ</h3>
+<p>
+میکاپ متناسب با چهره، سلیقه
+و مناسبت شما؛ از سبک‌های ظریف
+و طبیعی تا میکاپ‌های مجلسی.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-icon">👱🏻‍♀️</div>
+<h3>شینیون</h3>
+<p>
+انواع شینیون و مدل‌دهی مو برای
+مهمانی‌ها و مراسم، متناسب با
+مدل لباس و فرم چهره.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-icon">👰🏻</div>
+<h3>تمام خدمات VIP عروس</h3>
+<p>
+مجموعه خدمات زیبایی عروس برای
+آماده‌سازی کامل شما برای روز خاص؛
+با هماهنگی و برنامه‌ریزی اختصاصی.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-icon">🪮</div>
+<h3>بافت مو</h3>
+<p>
+انواع بافت مو با مدل‌های متنوع
+و زیبا برای استایل‌های روزمره،
+مجلسی و خاص.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-icon">✨</div>
+<h3>اکستنشن مو</h3>
+<p>
+خدمات اکستنشن مو برای ایجاد
+تغییر در طول و حجم مو با انتخاب
+روش مناسب برای شما.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-icon">🦶</div>
+<h3>پدیکور پا</h3>
+<p>
+مراقبت و زیبایی پا و ناخن‌های پا
+برای داشتن ظاهری مرتب و تجربه‌ای
+آرامش‌بخش.
+</p>
+</div>
+
+
+<!-- NEW -->
+
+<div class="service">
+<div class="service-icon">🌿</div>
+<h3>اپیلاسیون بدن</h3>
+<p>
+خدمات اپیلاسیون بدن با رعایت
+نظافت و دقت، برای داشتن پوستی
+مرتب و صاف‌تر.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-icon">🖋️</div>
+<h3>تتو بدن</h3>
+<p>
+اجرای طرح‌های تتو بدن با توجه
+به طرح و سلیقه شما. قبل از انجام
+خدمت، طرح و جزئیات آن هماهنگ می‌شود.
+</p>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHY -->
+
+<section class="why" id="why">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>WHY SARA BEAUTY?</span>
+
+<h2>
+چرا سالن زیبایی سارا شاه حسینی؟
+</h2>
+
+</div>
+
+
+<div class="why-intro">
+
+انتخاب یک سالن زیبایی فقط به انتخاب
+یک خدمت خلاصه نمی‌شود. محیط، دقت،
+توجه به سلیقه، کیفیت اجرا و حسی که
+بعد از دریافت خدمات دارید، همگی بخشی
+از تجربه شما هستند.
+
+در سالن زیبایی سارا شاه حسینی تلاش می‌کنیم
+هر مراجعه برای شما تبدیل به یک تجربه
+دلنشین و به‌یادماندنی شود.
+
+</div>
+
+
+<div class="why-grid">
+
+
+<div class="why-card">
+
+<div class="why-number">01</div>
+
+<h3>
+زیبایی با دقت و ظرافت
+</h3>
+
+<p>
+توجه به جزئیات و ظرافت در اجرای خدمات،
+از اصول مهم ماست. تلاش می‌کنیم نتیجه
+نهایی با خواسته و سلیقه شما هماهنگ باشد.
+</p>
+
+</div>
+
+
+<div class="why-card">
+
+<div class="why-number">02</div>
+
+<h3>
+توجه به سلیقه شما
+</h3>
+
+<p>
+هر فرد سبک و سلیقه مخصوص خودش را دارد.
+به همین دلیل انتخاب و خواسته شما
+اهمیت زیادی دارد.
+</p>
+
+</div>
+
+
+<div class="why-card">
+
+<div class="why-number">03</div>
+
+<h3>
+خدمات متنوع
+</h3>
+
+<p>
+از مو و ناخن گرفته تا میکاپ، شینیون،
+خدمات عروس، مژه، پوست، ابرو،
+اپیلاسیون و تتو بدن.
+</p>
+
+</div>
+
+
+<div class="why-card">
+
+<div class="why-number">04</div>
+
+<h3>
+تجربه‌ای آرام و دلنشین
+</h3>
+
+<p>
+زمانی که برای خودتان اختصاص داده‌اید
+ارزشمند است. تلاش می‌کنیم محیطی آرام
+و دلنشین برای شما فراهم کنیم.
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="why-final">
+
+«زیبایی شما، هنر ماست؛
+و رضایت شما، افتخار ماست.» ✨
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DISCOUNT -->
+
+<section class="discount" id="discount">
+
+<div class="container">
+
+<div class="discount-box">
+
+<div class="discount-badge">
+🎁 پیشنهاد ویژه
+</div>
+
+<h2>
+۱۰٪ تخفیف ویژه
+</h2>
+
+<p>
+با استفاده از کد تخفیف زیر،
+هنگام رزرو نوبت از ۱۰٪ تخفیف
+برخوردار شوید.
+</p>
+
+<div class="discount-code">
+SARA10
+</div>
+
+<p>
+این کد برای رزروهای حضوری و آنلاین
+قابل استفاده است.
+</p>
+
+<button
+class="copy-code"
+onclick="copyDiscount()">
+
+📋 کپی کد تخفیف
+
+</button>
+
+<div
+class="copy-message"
+id="copyMessage">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RESERVATION -->
+
+<section class="reservation" id="reservation">
+
+<div class="container">
+
+<div class="reservation-box">
+
+<div class="reservation-content">
+
+<span>
+RESERVATION
+</span>
+
+<h2>
+برای رزرو نوبت
+</h2>
+
+<p>
+برای دریافت نوبت و هماهنگی زمان مراجعه،
+با شماره زیر تماس بگیرید.
+
+<br>
+
+اگر می‌خواهید از تخفیف استفاده کنید،
+هنگام رزرو کد <b>SARA10</b> را اعلام کنید.
+</p>
+
+<a
+href="tel:09355097780"
+class="phone">
+
+۰۹۳۵۵۰۹۷۷۸۰
+
+</a>
+
+<br>
+
+<a
+href="tel:09355097780"
+class="btn btn-primary">
+
+📞 تماس برای رزرو
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RATING -->
+
+<section class="rating-section" id="rating">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>
+YOUR OPINION MATTERS
+</span>
+
+<h2>
+به سارا بیوتی امتیاز بدهید
+</h2>
+
+<p>
+تجربه خودتان را با ما به اشتراک بگذارید.
+</p>
+
+</div>
+
+
+<div class="rating-box">
+
+<div class="rating-main">
+
+<div
+class="rating-number"
+id="ratingNumber">
+
+۵.۰
+
+</div>
+
+<div>
+
+<div class="rating-stars">
+★★★★★
+</div>
+
+<div class="rating-text">
+امتیاز شما
+</div>
+
+</div>
+
+</div>
+
+
+<p class="rating-text">
+امتیاز موردنظر خود را انتخاب کنید:
+</p>
+
+
+<div class="star-buttons">
+
+<button class="star" data-value="1">★</button>
+<button class="star" data-value="2">★</button>
+<button class="star" data-value="3">★</button>
+<button class="star" data-value="4">★</button>
+<button class="star" data-value="5">★</button>
+
+</div>
+
+
+<div
+class="rating-message"
+id="ratingMessage">
+
+هنوز امتیازی ثبت نکرده‌اید.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SHARE -->
+
+<section class="share-section" id="share">
+
+<div class="container">
+
+<div class="share-box">
+
+<div class="share-icon">
+💌
+</div>
+
+<span class="hero-label">
+SHARE SARA BEAUTY
+</span>
+
+<h2>
+سارا بیوتی را به دوستانتان معرفی کنید
+</h2>
+
+<p>
+
+اگر فکر می‌کنید دوستانتان هم به خدمات
+زیبایی نیاز دارند، سایت سارا بیوتی را
+برای آن‌ها ارسال کنید تا بتوانند خدمات،
+آدرس و راه‌های ارتباطی را به‌راحتی ببینند.
+
+</p>
+
+
+<button
+class="share-button"
+onclick="shareSite()">
+
+📤 معرفی به دوستان
+
+</button>
+
+
+<div
+class="share-status"
+id="shareStatus">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ADDRESS -->
+
+<section class="address" id="address">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>
+CONTACT
+</span>
+
+<h2>
+آدرس و تماس
+</h2>
+
+</div>
+
+
+<div class="address-grid">
+
+
+<div class="address-card">
+
+<div class="address-icon">
+📍
+</div>
+
+<h3>
+آدرس دقیق
+</h3>
+
+<p>
+تهران، میدان نامجو،
+خیابان شیخ صفی،
+جنب کوروش،
+پلاک ۴۳
+</p>
+
+<a
+href="https://www.google.com/maps/search/?api=1&query=میدان+نامجو+خیابان+شیخ+صفی+جنب+کوروش+پلاک+43"
+target="_blank"
+class="map-button">
+
+مشاهده روی نقشه
+
+</a>
+
+</div>
+
+
+<div class="address-card">
+
+<div class="address-icon">
+📞
+</div>
+
+<h3>
+شماره تماس
+</h3>
+
+<p>
+جهت رزرو نوبت و هماهنگی خدمات
+با شماره زیر تماس بگیرید.
+</p>
+
+<a
+href="tel:09355097780"
+style="
+display:inline-block;
+margin-top:15px;
+color:var(--pink);
+font-size:22px;
+font-weight:bold;
+direction:ltr;
+">
+
+۰۹۳۵۵۰۹۷۷۸۰
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- INSTAGRAM -->
+
+<section class="instagram" id="instagram">
+
+<div class="container">
+
+<div class="instagram-box">
+
+<div class="instagram-icon">
+📸
+</div>
+
+<span class="hero-label">
+INSTAGRAM
+</span>
+
+<h2>
+پیج اینستاگرام
+</h2>
+
+<div class="instagram-name">
+@sarabeauty.lounge
+</div>
+
+<br>
+
+<a
+href="https://instagram.com/sarabeauty.lounge"
+target="_blank"
+class="btn btn-primary">
+
+ورود به پیج اینستاگرام
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- QR -->
+
+<section class="qr">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>
+SCAN
+</span>
+
+<h2>
+کیوآر کد سایت
+</h2>
+
+<p>
+برای ورود سریع به سایت، کد را اسکن کنید.
+</p>
+
+</div>
+
+
+<div class="qr-card">
+
+<h3>
+Sara Beauty Lounge
+</h3>
+
+<img
+class="qr-code"
+src="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=https%3A%2F%2Fkiannabifar-sys.github.io%2FSarabeauty%2F"
+alt="QR Code">
+
+<p>
+اسکن کنید و وارد سایت شوید
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- REVIEWS -->
+
+<section class="reviews" id="reviews">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>
+REVIEWS
+</span>
+
+<h2>
+نظرات مشتریان
+</h2>
+
+<p>
+رضایت مشتریان برای ما اهمیت زیادی دارد.
+</p>
+
+</div>
+
+
+<div class="reviews-grid">
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+از برخورد و کیفیت کار خیلی راضی بودم
+و تجربه خوبی داشتم.
+</p>
+
+<strong>
+— مشتری سالن
+</strong>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+محیط سالن آرام و دلنشین بود و از
+نتیجه کارم رضایت داشتم.
+</p>
+
+<strong>
+— مشتری سالن
+</strong>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+کار با دقت انجام شد و نتیجه نهایی
+برای من خیلی خوب بود.
+</p>
+
+<strong>
+— مشتری سالن
+</strong>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-grid">
+
+
+<div>
+
+<h3>
+Sara Beauty Lounge
+</h3>
+
+<p>
+سالن زیبایی سارا شاه حسینی
+در تهران.
+</p>
+
+<p style="margin-top:10px;">
+زیبایی، ظرافت و حس خوب.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+دسترسی سریع
+</h3>
+
+<a href="#home">
+صفحه اصلی
+</a>
+
+<a href="#services">
+خدمات
+</a>
+
+<a href="#why">
+چرا ما؟
+</a>
+
+<a href="#discount">
+تخفیف ویژه
+</a>
+
+<a href="#rating">
+امتیازدهی
+</a>
+
+<a href="#address">
+آدرس
+</a>
+
+</div>
+
+
+<div>
+
+<h3>
+ارتباط با ما
+</h3>
+
+<a href="tel:09355097780">
+📞 ۰۹۳۵۵۰۹۷۷۸۰
+</a>
+
+<a
+href="https://instagram.com/sarabeauty.lounge"
+target="_blank">
+
+📸 @sarabeauty.lounge
+
+</a>
+
+<p>
+📍 میدان نامجو، خیابان شیخ صفی،
+جنب کوروش، پلاک ۴۳
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 Sara Beauty Lounge
+— تمامی حقوق محفوظ است.
+
+</div>
+
+</footer>
+
+
+<script>
+
+
+/* START */
+
+function startSite(){
+
+document
+.getElementById("welcome")
+.classList.add("hide");
+
+}
+
+
+/* DATE */
+
+function showDate(){
+
+const today = new Date();
+
+const options = {
+weekday:"long",
+year:"numeric",
+month:"long",
+day:"numeric"
+};
+
+document.getElementById("date").innerHTML =
+"📅 " +
+today.toLocaleDateString(
+"fa-IR",
+options
+);
+
+}
+
+showDate();
+
+
+/* DARK MODE */
+
+function toggleTheme(){
+
+document.body.classList.toggle("dark");
+
+const button =
+document.getElementById("themeButton");
+
+const dark =
+document.body.classList.contains("dark");
+
+if(dark){
+
+button.innerHTML="☀️";
+
+localStorage.setItem(
+"saraTheme",
+"dark"
+);
+
+}else{
+
+button.innerHTML="🌙";
+
+localStorage.setItem(
+"saraTheme",
+"light"
+);
+
+}
+
+}
+
+
+/* LOAD THEME */
+
+if(
+localStorage.getItem("saraTheme")
+===
+"dark"
+){
+
+document.body.classList.add("dark");
+
+document.getElementById(
+"themeButton"
+).innerHTML="☀️";
+
+}
+
+
+/* DISCOUNT */
+
+function copyDiscount(){
+
+const code="SARA10";
+
+const message=
+document.getElementById("copyMessage");
+
+if(navigator.clipboard){
+
+navigator.clipboard.writeText(code);
+
+message.innerHTML=
+"✅ کد SARA10 کپی شد!";
+
+}else{
+
+message.innerHTML=
+"کد تخفیف: SARA10";
+
+}
+
+}
+
+
+/* RATING */
+
+const stars =
+document.querySelectorAll(".star");
+
+const ratingMessage =
+document.getElementById("ratingMessage");
+
+const ratingNumber =
+document.getElementById("ratingNumber");
+
+const savedRating =
+localStorage.getItem("saraRating");
+
+
+function showRating(value){
+
+stars.forEach(function(star){
+
+const starValue =
+Number(star.dataset.value);
+
+if(starValue <= value){
+
+star.classList.add("selected");
+
+}else{
+
+star.classList.remove("selected");
+
+}
+
+});
+
+}
+
+
+if(savedRating){
+
+showRating(
+Number(savedRating)
+);
+
+ratingNumber.innerHTML =
+Number(savedRating).toFixed(1);
+
+ratingMessage.innerHTML =
+"⭐ امتیاز شما ثبت شده است. ممنون از همراهی شما!";
+
+}
+
+
+stars.forEach(function(star){
+
+star.addEventListener(
+"click",
+function(){
+
+const value =
+Number(this.dataset.value);
+
+localStorage.setItem(
+"saraRating",
+value
+);
+
+showRating(value);
+
+ratingNumber.innerHTML =
+value.toFixed(1);
+
+ratingMessage.innerHTML =
+"⭐ امتیاز شما با موفقیت ثبت شد. ممنونیم!";
+
+}
+);
+
+});
+
+
+/* SHARE */
+
+async function shareSite(){
+
+const shareData={
+
+title:
+"SARA BEAUTY | سالن زیبایی سارا شاه حسینی",
+
+text:
+"سالن زیبایی سارا شاه حسینی در تهران؛ خدمات زیبایی، مو، ناخن، مژه، میکاپ و عروس.",
+
+url:
+window.location.href
+
+};
+
+const status =
+document.getElementById(
+"shareStatus"
+);
+
+
+if(navigator.share){
+
+try{
+
+await navigator.share(
+shareData
+);
+
+status.innerHTML =
+"💗 ممنون که سارا بیوتی را معرفی کردید!";
+
+}catch(error){
+
+status.innerHTML="";
+
+}
+
+}else{
+
+try{
+
+await navigator.clipboard.writeText(
+window.location.href
+);
+
+status.innerHTML =
+"🔗 لینک سایت کپی شد؛ حالا می‌توانید آن را برای دوستانتان ارسال کنید.";
+
+}catch(error){
+
+status.innerHTML =
+"لینک سایت را از نوار آدرس کپی کنید.";
+
+}
+
+}
+
+}
+
+</script>
+
+</body>
+    </html>
